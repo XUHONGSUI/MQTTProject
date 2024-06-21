@@ -1,102 +1,122 @@
 #include <ArduinoMqttClient.h>
 #include <WiFiNINA.h>
 #include "arduino_secrets.h"
-
+#include <utility/wifi_drv.h>
+#include <ArduinoJson.h>
 ///////please enter your sensitive data in the Secret tab/arduino_secrets.h
-char ssid[] = SECRET_SSID;        // your network SSID (name)
-char pass[] = SECRET_PASS;    // your network password (use for WPA, or use as key for WEP)
+char ssid[] = SECRET_SSID;        // your network SSID
+char pass[] = SECRET_PASS;    // your network password
+char token[] = MQTT_TOKEN;    //token
 
 WiFiClient wifiClient;
 MqttClient mqttClient(wifiClient);
 
 const char broker[] = "10.42.0.1";
 int        port     = 1883;
-const char topic[]  = "real_unique_topic";
-const char topic2[]  = "real_unique_topic_2";
-const char topic3[]  = "real_unique_topic_3";
-
-//set interval for sending messages (milliseconds)
-const long interval = 8000;
-unsigned long previousMillis = 0;
-
-int count = 0;
+char       charMac[18];
+const int led1 = 0; // D0
+const int led2 = 1; // D1
+String address="";
+unsigned long interval=1000;
+//subscribe 
+const char topic[]    = "home/ledcontrol";
+//publish 
+const char topicInfo[] ="state/information";
 
 void setup() {
-  //Initialize serial and wait for port to open:
+  WiFiDrv::pinMode(25, OUTPUT); //define green pin
+  WiFiDrv::pinMode(26, OUTPUT); //define red pin
+  WiFiDrv::pinMode(27, OUTPUT); //define blue pin
+  pinMode(led1, OUTPUT);
+  pinMode(led2, OUTPUT);
   Serial.begin(9600);
-  while (!Serial) {
-    ; // wait for serial port to connect. Needed for native USB port only
-  }
+  connectWiFi();
+  setupMQTT();
+  // set the message receive callback
+  mqttClient.onMessage(onMqttMessage);
+  mqttClient.subscribe(topic);
+  mqttClient.subscribe("home/temperature");
+  //publish 
+  Info(address,topicInfo,interval);
 
-  // attempt to connect to Wifi network:
-  Serial.print("Attempting to connect to WPA SSID: ");
-  Serial.println(ssid);
-  while (WiFi.begin(ssid, pass) != WL_CONNECTED) {
-    // failed, retry
-    Serial.print(".");
-    delay(5000);
-  }
-
-  Serial.println("You're connected to the network");
-  Serial.println();
-
-  Serial.print("Attempting to connect to the MQTT broker: ");
-  Serial.println(broker);
-
-  if (!mqttClient.connect(broker, port)) {
-    Serial.print("MQTT connection failed! Error code = ");
-    Serial.println(mqttClient.connectError());
-
-    while (1);
-  }
-
-  mqttClient.setKeepAliveInterval(1000);
-
-  Serial.println("You're connected to the MQTT broker!");
-  Serial.println();
 }
 
 void loop() {
-  // call poll() regularly to allow the library to send MQTT keep alive which
-  // avoids being disconnected by the broker
-  mqttClient.poll();
-
-  unsigned long currentMillis = millis();
-
-  if (currentMillis - previousMillis >= interval) {
-    // save the last time a message was sent
-    previousMillis = currentMillis;
-
-    //record random value from A0, A1 and A2
-    int Rvalue = analogRead(A0);
-    int Rvalue2 = analogRead(A1);
-    int Rvalue3 = analogRead(A2);
-
-    Serial.print("Sending message to topic: ");
-    Serial.println(topic);
-    Serial.println(Rvalue);
-
-    Serial.print("Sending message to topic: ");
-    Serial.println(topic2);
-    Serial.println(Rvalue2);
-
-    Serial.print("Sending message to topic: ");
-    Serial.println(topic2);
-    Serial.println(Rvalue3);
-
-    // send message, the Print interface can be used to set the message contents
-    mqttClient.beginMessage(topic);
-    mqttClient.print(Rvalue);
-    mqttClient.endMessage();
-
-    mqttClient.beginMessage(topic2);
-    mqttClient.print(Rvalue2);
-    mqttClient.endMessage();
-
-    mqttClient.beginMessage(topic3);
-    mqttClient.print(Rvalue3);
-    mqttClient.endMessage();
-
-    Serial.println();
+    //reconnect to wifi in case automatically disconnect
+  if (WiFi.status() != WL_CONNECTED) {
+    Serial.println("Wi-Fi disconnect, reconnecting...");
+    connectWiFi();
   }
+  //reconnect to MQTTserver
+  if (!mqttClient.connected()) {
+    Serial.println("MQTT disconnect, reconnecting...");
+    setupMQTT();
+  }
+
+  mqttClient.poll();
+}
+
+void onMqttMessage(int messageSize) {
+
+  String subtopic = mqttClient.messageTopic();
+  String content;
+  // use the Stream interface to print the contents
+  while (mqttClient.available()) {
+    char c= (char)mqttClient.read(); 
+    content =content+(String)c;
+  }
+  if(subtopic=="home/ledcontrol"){
+   if(content=="start"){
+    digitalWrite(led1, HIGH);
+    digitalWrite(led2, LOW);
+   }else if(content=="stop"){
+    digitalWrite(led1, LOW);
+    digitalWrite(led2, LOW);
+   }
+  }
+
+}
+
+void connectWiFi() {
+  Serial.print("Connecting to Wi-Fi...");
+  while (WiFi.begin(ssid, pass) != WL_CONNECTED) {
+    Serial.print(".");
+    delay(5000);
+  }
+  Serial.println("Connected to Wi-Fi.");
+  byte mac[6];
+  WiFi.macAddress(mac);
+  sprintf(charMac, "%02X:%02X:%02X:%02X:%02X:%02X", mac[0], mac[1], mac[2], mac[3], mac[4], mac[5]);
+  address = (String)charMac;
+}
+
+void setupMQTT() {
+  mqttClient.setId(charMac);
+  mqttClient.setUsernamePassword(address, token);
+  mqttClient.setKeepAliveInterval(interval);
+
+  Serial.print("Connecting to MQTT broker...");
+  while (!mqttClient.connect(broker, port)) {
+    Serial.print("MQTT connection failed! Error code = ");
+    Serial.println(mqttClient.connectError());
+    delay(5000);
+  }
+
+  Serial.println("Connected to MQTT broker.");
+}
+
+void Info(String address,const char* topic,unsigned long interval){
+  StaticJsonDocument<200> info;
+
+  info["address"]=address;
+  info["topic"]  =topic;
+  info["keepalivetime"] =interval;
+
+  char JsonInfo[512];
+  serializeJson(info, JsonInfo);
+
+  mqttClient.beginMessage(topicInfo);
+  mqttClient.print(JsonInfo);
+  mqttClient.endMessage();
+
 }
