@@ -1,0 +1,997 @@
+2024-06-11 12:42:25 info: server running and listening on port
+2024-06-11 12:43:12 info: server running and listening on port
+2024-06-11 12:43:14 info: Client Connected: Ardunio2
+2024-06-11 12:47:04 info: server running and listening on port
+2024-06-11 12:47:13 info: Client Connected: Ardunio2
+2024-06-11 12:49:08 info: server running and listening on port
+2024-06-11 12:50:13 info: server running and listening on port
+2024-06-11 12:50:16 info: Client Connected: Ardunio2
+2024-06-11 12:52:58 info: server running and listening on port
+2024-06-11 12:53:00 info: Client Connected: Ardunio2
+2024-06-11 12:53:40 info: server running and listening on port
+2024-06-11 12:53:42 info: Client Connected: Ardunio2
+2024-06-11 12:53:45 info: Client Disconnected: Ardunio2
+2024-06-11 12:53:57 info: Client Connected: Ardunio2
+2024-06-11 12:54:01 info: Client Ardunio2 published topic ABC: 
+2024-06-11 12:56:36 info: server running and listening on port
+2024-06-11 12:56:38 info: Client Connected: Ardunio2
+2024-06-11 12:56:40 info: Client Ardunio2 published topic ABC: 
+2024-06-11 12:59:13 info: server running and listening on port
+2024-06-11 12:59:16 info: Client Connected: Ardunio2
+2024-06-11 12:59:17 info: Client Ardunio2 published topic ABC: 
+2024-06-11 13:02:07 info: server running and listening on port
+2024-06-11 13:02:08 info: Client Connected: Ardunio2
+2024-06-11 13:02:11 info: Client Ardunio2 published topic ABC: 
+2024-06-11 13:34:26 info: server running and listening on port
+2024-06-11 13:34:28 info: Client Connected: Ardunio2
+2024-06-11 13:34:29 info: Client Ardunio2 published topic ABC: 
+2024-06-11 13:34:29 info: 
+2024-06-11 13:34:50 info: server running and listening on port
+2024-06-11 13:34:52 info: Client Connected: Ardunio2
+2024-06-11 13:34:53 info: Client Ardunio2 published topic ABC: 
+2024-06-11 13:34:53 info: 
+2024-06-11 13:35:19 info: server running and listening on port
+2024-06-11 13:35:24 info: Client Connected: Ardunio2
+2024-06-11 13:35:25 info: Client Ardunio2 published topic ABC: 
+2024-06-11 13:35:25 info: 
+2024-06-11 13:35:40 info: server running and listening on port
+2024-06-11 13:35:42 info: Client Connected: Ardunio2
+2024-06-11 13:35:43 info: Client Ardunio2 published topic ABC: 
+2024-06-11 13:35:43 info: 
+2024-06-11 13:35:51 info: server running and listening on port
+2024-06-11 13:35:55 info: Client Connected: Ardunio2
+2024-06-11 13:35:56 info: Client Ardunio2 published topic ABC: 
+2024-06-11 13:35:56 info: 
+2024-06-11 13:36:12 info: server running and listening on port
+2024-06-11 13:36:14 info: Client Connected: Ardunio2
+2024-06-11 13:36:15 info: Client Ardunio2 published topic ABC: 
+2024-06-11 13:36:15 info: 
+2024-06-11 13:36:28 info: server running and listening on port
+2024-06-11 13:36:29 info: Client Connected: Ardunio2
+2024-06-11 13:36:30 info: Client Ardunio2 published topic ABC: 
+2024-06-11 13:36:30 info: 
+2024-06-11 13:37:25 info: server running and listening on port
+2024-06-11 13:37:28 info: Client Connected: Ardunio2
+2024-06-11 13:37:33 info: Client Ardunio2 published topic ABC: 
+2024-06-11 13:37:50 info: Client Disconnected: Ardunio2
+2024-06-11 13:37:51 info: Client Connected: Ardunio2
+2024-06-11 13:37:52 info: Client Ardunio2 published topic ABC: 
+2024-06-11 13:37:59 info: Client Disconnected: Ardunio2
+2024-06-11 13:38:01 info: Client Connected: Ardunio2
+2024-06-11 13:38:06 info: Client Ardunio2 published topic ABC: ������
+2024-06-11 13:40:12 info: server running and listening on port
+2024-06-11 13:40:14 info: Client Connected: Ardunio2
+2024-06-11 13:40:16 info: Client Ardunio2 published topic ABC: ������
+2024-06-11 13:40:44 info: server running and listening on port
+2024-06-11 13:40:45 info: Client Connected: Ardunio2
+2024-06-11 13:40:46 info: Client Ardunio2 published topic ABC: ������
+2024-06-11 13:41:04 info: Client Ardunio2 published topic ABC放大: ������
+2024-06-11 13:42:51 info: server running and listening on port
+2024-06-11 13:42:53 info: Client Connected: Ardunio2
+2024-06-11 13:42:55 info: Client Ardunio2 published topic ABC放大: ������
+2024-06-11 13:43:35 info: server running and listening on port
+2024-06-11 13:43:38 info: Client Connected: Ardunio2
+2024-06-11 13:43:39 info: Client Ardunio2 published topic ABC放大: ������
+2024-06-11 13:43:39 info: 
+2024-06-11 13:44:06 info: Client Disconnected: Ardunio2
+2024-06-11 13:44:06 info: Client Connected: Ardunio2
+2024-06-11 13:44:07 info: Client Ardunio2 published topic ABC放大: ������
+2024-06-11 13:44:07 info: 
+2024-06-11 13:44:08 info: Client Ardunio2 published topic ABC放大: ������
+2024-06-11 13:44:08 info: 
+2024-06-11 13:45:25 info: Client Disconnected: Ardunio2
+2024-06-11 13:45:26 info: Client Connected: Ardunio2
+2024-06-11 13:45:27 info: Client Ardunio2 published topic ABC放大: ������
+2024-06-11 13:45:27 info: 
+2024-06-11 13:45:31 info: Client Ardunio2 published topic ABC放大: ������
+2024-06-11 13:45:31 info: 
+2024-06-11 13:45:49 info: server running and listening on port
+2024-06-11 13:45:51 info: Client Connected: Ardunio2
+2024-06-11 13:45:53 info: Client Ardunio2 published topic ABC放大: ������
+2024-06-11 13:45:53 info: ABC
+2024-06-11 13:46:42 info: server running and listening on port
+2024-06-11 13:46:43 info: Client Connected: Ardunio2
+2024-06-11 13:46:46 info: Client Ardunio2 published topic ABC放大: ������
+2024-06-11 13:47:12 info: server running and listening on port
+2024-06-11 13:47:14 info: Client Connected: Ardunio2
+2024-06-11 13:47:15 info: Client Ardunio2 published topic ABC放大: ������
+2024-06-11 13:47:38 info: server running and listening on port
+2024-06-11 13:47:40 info: Client Connected: Ardunio2
+2024-06-11 13:47:42 info: Client Ardunio2 published topic ABC放大: ������
+2024-06-11 13:48:25 info: server running and listening on port
+2024-06-11 13:48:27 info: Client Connected: Ardunio2
+2024-06-11 13:48:29 info: Client Ardunio2 published topic ABC放大: ������
+2024-06-11 13:49:52 info: Client Ardunio2 published topic client: ������
+2024-06-11 13:49:58 info: Client Ardunio2 published topic client: MOMOM
+2024-06-11 13:52:31 info: server running and listening on port
+2024-06-11 13:52:33 info: Client Connected: Ardunio2
+2024-06-11 13:52:35 info: Client Ardunio2 published topic client: MOMOM
+2024-06-11 13:52:35 info: 0
+2024-06-11 13:53:27 info: server running and listening on port
+2024-06-11 13:53:30 info: Client Connected: Ardunio2
+2024-06-11 13:53:31 info: Client Ardunio2 published topic client: MOMOM
+2024-06-11 13:53:31 info: 0
+2024-06-11 13:53:31 info: [object Object]
+2024-06-11 13:54:15 info: server running and listening on port
+2024-06-11 13:54:17 info: Client Connected: Ardunio2
+2024-06-11 13:54:18 info: Client Ardunio2 published topic client: MOMOM
+2024-06-11 13:54:18 info: 0
+2024-06-11 13:54:18 info: [object Object]
+2024-06-11 13:55:26 info: server running and listening on port
+2024-06-11 13:55:28 info: Client Connected: Ardunio2
+2024-06-11 13:55:29 info: Client Ardunio2 published topic client: MOMOM
+2024-06-11 13:55:29 info: 0
+2024-06-11 13:55:29 info: clientpublishArdunio2
+2024-06-11 14:01:50 info: server running and listening on port
+2024-06-11 14:01:52 info: Client Connected: Ardunio2
+2024-06-11 14:01:54 info: Client Ardunio2 published topic client: MOMOM
+2024-06-11 14:01:54 info: [object Object]
+2024-06-11 14:03:59 info: server running and listening on port
+2024-06-11 14:04:01 info: Client Connected: Ardunio2
+2024-06-11 14:04:03 info: Client Ardunio2 published topic client: MOMOM
+2024-06-11 14:04:03 info: [object Object]
+2024-06-11 14:13:00 info: server running and listening on port
+2024-06-11 14:13:02 info: Client Connected: Ardunio2
+2024-06-11 14:13:03 info: Client Ardunio2 published topic client: MOMOM
+2024-06-11 14:15:30 info: Client Disconnected: Ardunio2
+2024-06-11 14:15:31 info: Client Connected: Ardunio2
+2024-06-11 14:15:32 info: Client Ardunio2 published topic client: MOMOM
+2024-06-11 14:15:32 info: Client Ardunio2 published topic client: MOMOM
+2024-06-11 14:15:33 info: Client Ardunio2 published topic client: MOMOM
+2024-06-11 14:17:15 info: server running and listening on port
+2024-06-11 14:17:17 info: Client Connected: Ardunio2
+2024-06-11 14:17:17 info: Client Ardunio2 published topic client: MOMOM
+2024-06-11 14:17:17 info: CCCCCCCCCCCCCCCCCCC
+2024-06-11 14:18:07 info: server running and listening on port
+2024-06-11 14:18:09 info: Client Connected: Ardunio2
+2024-06-11 14:18:09 info: Client Ardunio2 published topic client: MOMOM
+2024-06-11 14:18:56 info: Client Disconnected: Ardunio2
+2024-06-11 14:18:58 info: Client Connected: Ardunio2
+2024-06-11 14:18:58 info: Client Disconnected: Ardunio2
+2024-06-11 14:19:18 info: Client Connected: Ardunio
+2024-06-11 14:19:40 info: server running and listening on port
+2024-06-11 14:19:42 info: Client Connected: Ardunio2
+2024-06-11 14:20:33 info: server running and listening on port
+2024-06-11 14:20:35 info: Client Connected: Ardunio
+2024-06-11 14:20:48 info: server running and listening on port
+2024-06-11 14:20:51 info: Client Connected: Ardunio2
+2024-06-11 14:21:35 info: server running and listening on port
+2024-06-11 14:21:35 info: Client Connected: Ardunio
+2024-06-11 14:21:37 info: Client Disconnected: Ardunio
+2024-06-11 14:21:38 info: Client Connected: Ardunio
+2024-06-11 14:21:43 info: Client Ardunio published topic z: czcv
+2024-06-11 14:26:33 info: server running and listening on port
+2024-06-11 14:26:36 info: Client Connected: Ardunio
+2024-06-11 14:26:37 info: Client Ardunio published topic z: czcv
+2024-06-11 14:29:36 info: Client Ardunio published topic z: czcv
+2024-06-11 14:29:37 info: Client Ardunio published topic z: czcv
+2024-06-11 14:29:37 info: Client Ardunio published topic z: czcv
+2024-06-11 14:29:37 info: Client Ardunio published topic z: czcv
+2024-06-11 14:29:38 info: Client Ardunio published topic z: czcv
+2024-06-11 14:29:58 info: server running and listening on port
+2024-06-11 14:30:00 info: Client Connected: Ardunio
+2024-06-11 14:30:01 info: Client Ardunio published topic z: czcv
+2024-06-11 14:30:02 info: Client Ardunio published topic z: czcv
+2024-06-11 14:30:02 info: Client Ardunio published topic z: czcv
+2024-06-11 14:31:01 info: Client Connected: Ardunio33
+2024-06-11 14:31:04 info: Client Ardunio33 published topic gdfsg: fsdafg
+2024-06-11 14:31:53 info: Client Ardunio33 published topic gdfsgf: fsdafg
+2024-06-11 14:32:16 info: server running and listening on port
+2024-06-11 14:32:19 info: Client Connected: Ardunio33
+2024-06-11 14:32:42 info: Client Ardunio33 published topic gdfsgf: fsdafg
+2024-06-11 14:32:46 info: Client Ardunio33 published topic gdfsg: fsdafg
+2024-06-11 14:32:47 info: Client Ardunio33 published topic gdfsg: fsdafg
+2024-06-11 14:32:50 info: Client Ardunio33 published topic gdfsgfdsa: fsdafg
+2024-06-11 14:44:20 info: server running and listening on port
+2024-06-11 14:44:23 info: Client Connected: Ardunio
+2024-06-11 14:44:24 info: Client Ardunio published topic z: czcv
+2024-06-11 14:44:37 info: Client Connected: Ardunio33
+2024-06-11 14:53:31 info: server running and listening on port
+2024-06-11 14:53:33 info: Client Connected: Ardunio33
+2024-06-11 14:53:50 info: Client Disconnected: Ardunio33
+2024-06-11 14:53:51 info: Client Connected: Ardunio33
+2024-06-11 14:53:59 info: Client Ardunio33 subscribed to topics: z
+2024-06-11 14:56:22 info: server running and listening on port
+2024-06-11 14:56:26 info: Client Connected: Ardunio33
+2024-06-11 14:56:47 info: server running and listening on port
+2024-06-11 14:56:48 info: Client Connected: Ardunio33
+2024-06-11 14:56:51 info: Client Ardunio33 subscribed to topics: z
+2024-06-11 14:58:27 info: server running and listening on port
+2024-06-11 14:58:29 info: Client Connected: Ardunio33
+2024-06-11 14:58:30 info: Client Ardunio33 subscribed to topics: z
+2024-06-11 14:58:32 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 15:00:25 info: server running and listening on port
+2024-06-11 15:00:28 info: Client Connected: Ardunio33
+2024-06-11 15:00:31 info: Client Ardunio33 subscribed to topics: z
+2024-06-11 15:02:26 info: Client Disconnected: Ardunio33
+2024-06-11 15:02:26 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 15:02:38 info: server running and listening on port
+2024-06-11 15:02:40 info: Client Connected: Ardunio33
+2024-06-11 15:02:42 info: Client Ardunio33 subscribed to topics: z
+2024-06-11 15:03:01 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 15:03:02 info: Client Ardunio33 subscribed to topics: z
+2024-06-11 15:10:51 info: Client Disconnected: Ardunio33
+2024-06-11 15:10:51 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 15:11:04 info: server running and listening on port
+2024-06-11 15:11:05 info: Client Connected: Ardunio33
+2024-06-11 15:11:07 info: Client Ardunio33 subscribed to topics: z
+2024-06-11 15:11:15 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 15:11:16 info: Client Ardunio33 subscribed to topics: z
+2024-06-11 15:11:22 info: Client Ardunio33 subscribed to topics: fdsa
+2024-06-11 15:11:40 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 15:11:41 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 15:11:43 info: Client Ardunio33 subscribed to topics: zdfadsfa
+2024-06-11 15:17:12 info: server running and listening on port
+2024-06-11 15:17:16 info: Client Connected: Ardunio33
+2024-06-11 15:17:18 info: Client Ardunio33 subscribed to topics: zdfadsfa
+2024-06-11 15:17:33 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 15:17:34 info: Client Ardunio33 subscribed to topics: zdfadsfa
+2024-06-11 15:17:36 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 15:17:38 info: Client Ardunio33 subscribed to topics: zdfadsfa
+2024-06-11 15:17:41 info: Client Ardunio33 subscribed to topics: z
+2024-06-11 15:17:43 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 15:18:42 info: server running and listening on port
+2024-06-11 15:18:45 info: Client Connected: Ardunio33
+2024-06-11 15:18:46 info: Client Ardunio33 subscribed to topics: z
+2024-06-11 15:18:50 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 15:19:20 info: Client Ardunio33 subscribed to topics: z
+2024-06-11 15:19:23 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 15:19:45 info: Client Ardunio33 subscribed to topics: z
+2024-06-11 15:19:47 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 15:20:46 info: Client Ardunio33 subscribed to topics: zda
+2024-06-11 15:20:49 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 15:23:26 info: server running and listening on port
+2024-06-11 15:23:28 info: Client Connected: Ardunio33
+2024-06-11 15:23:31 info: Client Ardunio33 subscribed to topics: zda
+2024-06-11 15:25:21 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 15:25:35 info: server running and listening on port
+2024-06-11 15:25:37 info: Client Connected: Ardunio33
+2024-06-11 15:25:38 info: Client Ardunio33 subscribed to topics: zda
+2024-06-11 15:25:38 info: same topic
+2024-06-11 15:26:17 info: server running and listening on port
+2024-06-11 15:26:20 info: Client Connected: Ardunio33
+2024-06-11 15:26:21 info: Client Ardunio33 subscribed to topics: zda
+2024-06-11 15:26:21 info: [object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+2024-06-11 15:26:33 info: Client Disconnected: Ardunio33
+2024-06-11 15:26:33 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 15:26:33 info: [object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+2024-06-11 15:26:44 info: server running and listening on port
+2024-06-11 15:26:46 info: Client Connected: Ardunio33
+2024-06-11 15:26:47 info: Client Ardunio33 subscribed to topics: zda
+2024-06-11 15:26:47 info: [object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+2024-06-11 15:29:07 info: server running and listening on port
+2024-06-11 15:29:09 info: Client Connected: Ardunio33
+2024-06-11 15:29:11 info: Client Ardunio33 subscribed to topics: zda
+2024-06-11 15:29:11 info: [object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+2024-06-11 15:29:12 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 15:29:12 info: [object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+2024-06-11 15:33:47 info: server running and listening on port
+2024-06-11 15:33:49 info: Client Connected: Ardunio33
+2024-06-11 15:33:53 info: Client Ardunio33 subscribed to topics: zda
+2024-06-11 15:33:53 info: [object Object]
+2024-06-11 15:33:53 info: undefined
+2024-06-11 15:34:16 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 15:34:16 info: [object Object]
+2024-06-11 15:34:16 info: undefined
+2024-06-11 15:35:35 info: server running and listening on port
+2024-06-11 15:35:37 info: Client Connected: Ardunio33
+2024-06-11 15:35:38 info: Client Ardunio33 subscribed to topics: zda
+2024-06-11 15:35:38 info: [object Object]
+2024-06-11 15:35:38 info: undefined
+2024-06-11 15:35:43 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 15:35:43 info: [object Object]
+2024-06-11 15:35:43 info: undefined
+2024-06-11 15:37:11 info: server running and listening on port
+2024-06-11 15:37:12 info: Client Connected: Ardunio33
+2024-06-11 15:37:14 info: Client Ardunio33 subscribed to topics: zda
+2024-06-11 15:37:40 info: server running and listening on port
+2024-06-11 15:37:42 info: Client Connected: Ardunio33
+2024-06-11 15:37:43 info: Client Ardunio33 subscribed to topics: zda
+2024-06-11 15:38:44 info: server running and listening on port
+2024-06-11 15:38:47 info: Client Connected: Ardunio33
+2024-06-11 15:38:50 info: Client Ardunio33 subscribed to topics: zda
+2024-06-11 15:38:50 info: [object Object]
+2024-06-11 15:38:50 info: undefined
+2024-06-11 15:38:52 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 15:38:52 info: [object Object]
+2024-06-11 15:38:52 info: undefined
+2024-06-11 15:39:02 info: Client Ardunio33 subscribed to topics: zda
+2024-06-11 15:39:02 info: [object Object]
+2024-06-11 15:39:02 info: undefined
+2024-06-11 15:39:03 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 15:39:03 info: [object Object]
+2024-06-11 15:39:03 info: undefined
+2024-06-11 15:39:05 info: Client Ardunio33 subscribed to topics: zda
+2024-06-11 15:39:05 info: [object Object]
+2024-06-11 15:39:05 info: undefined
+2024-06-11 15:39:06 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 15:39:06 info: [object Object]
+2024-06-11 15:39:06 info: undefined
+2024-06-11 15:39:07 info: Client Ardunio33 subscribed to topics: zda
+2024-06-11 15:39:07 info: [object Object]
+2024-06-11 15:39:07 info: undefined
+2024-06-11 15:39:08 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 15:39:08 info: [object Object]
+2024-06-11 15:39:08 info: undefined
+2024-06-11 15:39:08 info: Client Ardunio33 subscribed to topics: zda
+2024-06-11 15:39:08 info: [object Object]
+2024-06-11 15:39:08 info: undefined
+2024-06-11 15:39:09 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 15:39:09 info: [object Object]
+2024-06-11 15:39:09 info: undefined
+2024-06-11 15:39:11 info: Client Ardunio33 subscribed to topics: zda
+2024-06-11 15:39:11 info: [object Object]
+2024-06-11 15:39:11 info: undefined
+2024-06-11 15:39:42 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 15:39:42 info: [object Object]
+2024-06-11 15:39:42 info: undefined
+2024-06-11 15:39:49 info: Client Ardunio33 subscribed to topics: zda
+2024-06-11 15:39:49 info: [object Object]
+2024-06-11 15:39:49 info: undefined
+2024-06-11 15:39:50 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 15:39:50 info: [object Object]
+2024-06-11 15:39:50 info: undefined
+2024-06-11 15:39:51 info: Client Ardunio33 subscribed to topics: zda
+2024-06-11 15:39:51 info: [object Object]
+2024-06-11 15:39:51 info: undefined
+2024-06-11 15:43:05 info: server running and listening on port
+2024-06-11 15:43:07 info: Client Connected: Ardunio33
+2024-06-11 15:43:08 info: Client Ardunio33 subscribed to topics: zda
+2024-06-11 15:43:10 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 15:43:45 info: Client Ardunio33 published topic 465: cxz
+2024-06-11 15:43:46 info: Client Ardunio33 published topic 465: cxz
+2024-06-11 15:43:47 info: Client Ardunio33 published topic 465: cxz
+2024-06-11 15:43:48 info: Client Ardunio33 published topic 465: cxz
+2024-06-11 15:43:48 info: Client Ardunio33 published topic 465: cxz
+2024-06-11 15:43:48 info: Client Ardunio33 published topic 465: cxz
+2024-06-11 15:43:49 info: Client Ardunio33 published topic 465: cxz
+2024-06-11 15:43:55 info: Client Ardunio33 published topic 465: cxz
+2024-06-11 15:43:56 info: Client Ardunio33 published topic 465: cxz
+2024-06-11 15:43:56 info: Client Ardunio33 published topic 465: cxz
+2024-06-11 15:43:56 info: Client Ardunio33 published topic 465: cxz
+2024-06-11 15:44:06 info: Client Ardunio33 subscribed to topics: 456
+2024-06-11 15:44:13 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 15:47:19 info: server running and listening on port
+2024-06-11 15:47:22 info: Client Connected: Ardunio33
+2024-06-11 15:47:24 info: Client Ardunio33 subscribed to topics: 456
+2024-06-11 15:47:25 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 15:47:32 info: Client Ardunio33 subscribed to topics: 456
+2024-06-11 15:47:35 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 15:47:37 info: Client Ardunio33 subscribed to topics: 456
+2024-06-11 15:47:38 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 15:47:41 info: Client Ardunio33 subscribed to topics: 456
+2024-06-11 15:47:42 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 15:50:29 info: server running and listening on port
+2024-06-11 15:50:31 info: Client Connected: Ardunio33
+2024-06-11 15:50:32 info: Client Ardunio33 subscribed to topics: 456
+2024-06-11 15:51:03 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 15:54:08 info: Client Disconnected: Ardunio33
+2024-06-11 15:54:11 info: server running and listening on port
+2024-06-11 15:54:25 info: Client Connected: Ardunio33
+2024-06-11 15:54:38 info: Client Ardunio33 subscribed to topics: zda
+2024-06-11 15:54:42 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 15:54:44 info: Client Ardunio33 subscribed to topics: zda
+2024-06-11 15:54:45 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 15:54:47 info: Client Ardunio33 subscribed to topics: zda
+2024-06-11 15:54:47 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 15:54:49 info: Client Ardunio33 subscribed to topics: zda
+2024-06-11 15:54:50 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 15:57:05 info: server running and listening on port
+2024-06-11 15:57:07 info: Client Connected: Ardunio33
+2024-06-11 15:57:12 info: Client Ardunio33 subscribed to topics: zda
+2024-06-11 15:57:14 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 15:57:16 info: Client Ardunio33 subscribed to topics: zda
+2024-06-11 15:57:17 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 16:06:57 info: server running and listening on port
+2024-06-11 16:07:03 info: Client Connected: Ardunio33
+2024-06-11 16:07:05 info: Client Ardunio33 subscribed to topics: zda
+2024-06-11 16:07:08 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 16:07:10 info: Client Ardunio33 subscribed to topics: zda
+2024-06-11 16:07:13 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 16:07:14 info: Client Ardunio33 subscribed to topics: zda
+2024-06-11 16:07:16 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 16:07:58 info: server running and listening on port
+2024-06-11 16:08:00 info: Client Connected: Ardunio33
+2024-06-11 16:08:01 info: Client Ardunio33 subscribed to topics: zda
+2024-06-11 16:08:19 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 16:08:20 info: Client Ardunio33 subscribed to topics: zda
+2024-06-11 16:08:22 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 16:08:23 info: Client Ardunio33 subscribed to topics: zda
+2024-06-11 16:08:24 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 16:08:25 info: Client Ardunio33 subscribed to topics: zda
+2024-06-11 16:08:26 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 16:09:23 info: Client Ardunio33 subscribed to topics: zda
+2024-06-11 16:09:24 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 16:09:25 info: Client Ardunio33 subscribed to topics: zda
+2024-06-11 16:09:26 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 16:09:27 info: Client Ardunio33 subscribed to topics: zda
+2024-06-11 16:09:28 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 16:09:50 info: Client Disconnected: Ardunio33
+2024-06-11 16:09:52 info: Client Connected: Ardunio33
+2024-06-11 16:09:53 info: Client Ardunio33 subscribed to topics: zda
+2024-06-11 16:10:02 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 16:10:09 info: Client Ardunio33 subscribed to topics: zda
+2024-06-11 16:10:11 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 16:10:11 info: Client Ardunio33 subscribed to topics: zda
+2024-06-11 16:10:12 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 16:10:13 info: Client Ardunio33 subscribed to topics: zda
+2024-06-11 16:10:14 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 16:10:18 info: Client Ardunio33 subscribed to topics: fdsa
+2024-06-11 16:10:20 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 16:10:21 info: Client Ardunio33 subscribed to topics: fdsa
+2024-06-11 16:10:22 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 16:10:22 info: Client Ardunio33 subscribed to topics: fdsa
+2024-06-11 16:10:24 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 16:10:25 info: Client Ardunio33 subscribed to topics: fdsa
+2024-06-11 16:10:29 info: Client Ardunio33 subscribed to topics: zda
+2024-06-11 16:11:48 info: Client Disconnected: Ardunio33
+2024-06-11 16:11:48 info: Client Ardunio33 unsubscribed to topics: , 
+2024-06-11 16:11:58 info: Client Connected: Ardunio33
+2024-06-11 16:12:00 info: Client Ardunio33 subscribed to topics: fdsa
+2024-06-11 16:12:03 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 16:12:03 info: Client Ardunio33 subscribed to topics: fdsa
+2024-06-11 16:12:09 info: server running and listening on port
+2024-06-11 16:12:14 info: Client Connected: Ardunio33
+2024-06-11 16:12:16 info: Client Ardunio33 subscribed to topics: fdsa
+2024-06-11 16:12:17 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 16:12:20 info: Client Ardunio33 subscribed to topics: fdsa
+2024-06-11 16:12:22 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 16:12:23 info: Client Ardunio33 subscribed to topics: fdsa
+2024-06-11 16:12:24 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 16:12:25 info: Client Ardunio33 subscribed to topics: fdsa
+2024-06-11 16:12:25 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 16:12:26 info: Client Ardunio33 subscribed to topics: fdsa
+2024-06-11 16:12:27 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 16:12:27 info: Client Ardunio33 subscribed to topics: fdsa
+2024-06-11 16:12:27 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 16:13:23 info: server running and listening on port
+2024-06-11 16:13:25 info: Client Connected: Ardunio33
+2024-06-11 16:13:26 info: Client Ardunio33 subscribed to topics: fdsa
+2024-06-11 16:13:55 info: undefined
+2024-06-11 16:13:55 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 16:13:56 info: Client Ardunio33 subscribed to topics: fdsa
+2024-06-11 16:14:01 info: undefined
+2024-06-11 16:14:01 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 16:14:02 info: Client Ardunio33 subscribed to topics: fdsa
+2024-06-11 16:14:03 info: undefined
+2024-06-11 16:14:03 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 16:14:04 info: Client Ardunio33 subscribed to topics: fdsa
+2024-06-11 16:14:12 info: Client Disconnected: Ardunio33
+2024-06-11 16:14:12 info: undefined
+2024-06-11 16:14:12 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 16:17:21 info: server running and listening on port
+2024-06-11 16:17:32 info: Client Connected: Ardunio33
+2024-06-11 16:17:36 info: Client Ardunio33 subscribed to topics: fdsa
+2024-06-11 16:17:37 info: undefined
+2024-06-11 16:17:37 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 16:17:50 info: Client Ardunio33 subscribed to topics: fdsa
+2024-06-11 16:17:53 info: undefined
+2024-06-11 16:17:53 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 16:17:55 info: Client Ardunio33 subscribed to topics: fdsa
+2024-06-11 16:18:46 info: server running and listening on port
+2024-06-11 16:18:48 info: Client Connected: Ardunio33
+2024-06-11 16:19:01 info: Client Disconnected: Ardunio33
+2024-06-11 16:19:01 info: Client Connected: Ardunio33
+2024-06-11 16:19:03 info: Client Ardunio33 subscribed to topics: fdsa
+2024-06-11 16:19:04 info: undefined
+2024-06-11 16:19:04 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 16:19:06 info: Client Ardunio33 subscribed to topics: fdsa
+2024-06-11 16:19:08 info: undefined
+2024-06-11 16:19:08 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 16:19:09 info: Client Ardunio33 subscribed to topics: fdsa
+2024-06-11 16:19:09 info: undefined
+2024-06-11 16:19:09 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 16:19:11 info: Client Ardunio33 subscribed to topics: fdsa
+2024-06-11 16:19:11 info: undefined
+2024-06-11 16:19:11 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 16:19:12 info: Client Ardunio33 subscribed to topics: fdsa
+2024-06-11 16:19:13 info: undefined
+2024-06-11 16:19:13 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 16:19:50 info: server running and listening on port
+2024-06-11 16:19:52 info: Client Connected: Ardunio33
+2024-06-11 16:19:55 info: Client Ardunio33 subscribed to topics: fdsa
+2024-06-11 16:19:57 info: undefined
+2024-06-11 16:19:57 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 16:20:30 info: Client Disconnected: Ardunio33
+2024-06-11 16:20:30 info: Client Connected: Ardunio33
+2024-06-11 16:20:31 info: Client Ardunio33 subscribed to topics: fdsa
+2024-06-11 16:20:32 info: undefined
+2024-06-11 16:20:32 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 16:20:33 info: Client Ardunio33 subscribed to topics: fdsa
+2024-06-11 16:20:34 info: undefined
+2024-06-11 16:20:34 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 16:20:39 info: server running and listening on port
+2024-06-11 16:20:41 info: Client Connected: Ardunio33
+2024-06-11 16:20:43 info: Client Ardunio33 subscribed to topics: fdsa
+2024-06-11 16:20:44 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 16:20:49 info: Client Ardunio33 subscribed to topics: fdsa
+2024-06-11 16:20:51 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 16:20:55 info: Client Ardunio33 subscribed to topics: fdsa
+2024-06-11 16:20:57 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 16:20:58 info: Client Ardunio33 subscribed to topics: fdsa
+2024-06-11 16:20:59 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 16:20:59 info: Client Ardunio33 subscribed to topics: fdsa
+2024-06-11 16:21:00 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 16:21:00 info: Client Ardunio33 subscribed to topics: fdsa
+2024-06-11 16:21:01 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 16:21:02 info: Client Ardunio33 subscribed to topics: fdsa
+2024-06-11 16:21:03 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 16:21:04 info: Client Ardunio33 subscribed to topics: fdsa
+2024-06-11 16:21:05 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 16:21:14 info: Client Disconnected: Ardunio33
+2024-06-11 16:21:15 info: Client Connected: Ardunio33
+2024-06-11 16:21:20 info: server running and listening on port
+2024-06-11 16:21:21 info: Client Connected: Ardunio33
+2024-06-11 16:21:23 info: Client Ardunio33 subscribed to topics: fdsa
+2024-06-11 16:21:25 info: Client Ardunio33 unsubscribed to topics: 
+2024-06-11 16:25:51 info: server running and listening on port
+2024-06-11 16:25:55 info: Client Connected: Ardunio33
+2024-06-11 16:25:56 info: Client Ardunio33 subscribed to topics: fdsa
+2024-06-11 16:26:47 info: server running and listening on port
+2024-06-11 16:26:49 info: Client Connected: Ardunio33
+2024-06-11 16:26:52 info: Client Ardunio33 subscribed to topics: fdsa
+2024-06-11 16:26:54 info: Client Ardunio33 unsubscribed to topics: fdsa
+2024-06-11 16:26:57 info: Client Ardunio33 subscribed to topics: fdsa
+2024-06-11 16:26:58 info: Client Ardunio33 unsubscribed to topics: fdsa
+2024-06-11 16:27:07 info: Client Ardunio33 subscribed to topics: fdsa
+2024-06-11 16:27:09 info: Client Ardunio33 unsubscribed to topics: fdsa
+2024-06-11 16:27:10 info: Client Ardunio33 subscribed to topics: fdsa
+2024-06-11 16:27:12 info: Client Ardunio33 unsubscribed to topics: fdsa
+2024-06-11 16:28:14 info: Client Disconnected: Ardunio33
+2024-06-11 16:29:34 info: server running and listening on port
+2024-06-11 16:29:46 info: Client Connected: Ardunio33
+2024-06-11 16:29:48 info: Client Ardunio33 subscribed to topics: fdsa
+2024-06-11 16:29:50 info: Client Ardunio33 unsubscribed to topics: fdsa
+2024-06-11 16:29:51 info: Client Ardunio33 subscribed to topics: fdsa
+2024-06-11 16:29:52 info: Client Ardunio33 unsubscribed to topics: fdsa
+2024-06-11 16:29:53 info: Client Ardunio33 subscribed to topics: fdsa
+2024-06-11 16:29:53 info: Client Ardunio33 unsubscribed to topics: fdsa
+2024-06-11 16:29:54 info: Client Ardunio33 subscribed to topics: fdsa
+2024-06-11 16:29:54 info: Client Ardunio33 unsubscribed to topics: fdsa
+2024-06-11 16:29:55 info: Client Ardunio33 subscribed to topics: fdsa
+2024-06-11 16:29:58 info: Client Ardunio33 subscribed to topics: z
+2024-06-11 16:30:00 info: Client Ardunio33 unsubscribed to topics: z
+2024-06-11 16:30:02 info: Client Ardunio33 subscribed to topics: z
+2024-06-11 16:30:05 info: Client Ardunio33 unsubscribed to topics: z
+2024-06-11 16:30:07 info: Client Ardunio33 subscribed to topics: z
+2024-06-11 16:30:08 info: Client Ardunio33 unsubscribed to topics: fdsa
+2024-06-11 16:30:10 info: Client Ardunio33 unsubscribed to topics: z
+2024-06-11 16:30:12 info: Client Ardunio33 subscribed to topics: z
+2024-06-11 16:30:12 info: Client Ardunio33 unsubscribed to topics: z
+2024-06-11 16:30:14 info: Client Ardunio33 subscribed to topics: z
+2024-06-11 16:30:22 info: Client Ardunio33 unsubscribed to topics: z
+2024-06-11 16:30:23 info: Client Ardunio33 subscribed to topics: z
+2024-06-11 16:30:25 info: Client Ardunio33 unsubscribed to topics: z
+2024-06-11 16:30:56 info: server running and listening on port
+2024-06-11 16:31:00 info: Client Connected: Ardunio33
+2024-06-11 16:31:01 info: Client Ardunio33 subscribed to topics: z
+2024-06-11 16:31:03 info: Client Ardunio33 unsubscribed to topics: z
+2024-06-11 16:31:04 info: Client Ardunio33 subscribed to topics: z
+2024-06-11 16:31:06 info: Client Ardunio33 unsubscribed to topics: z
+2024-06-11 16:31:32 info: server running and listening on port
+2024-06-11 16:31:34 info: Client Connected: Ardunio33
+2024-06-11 16:31:36 info: Client Ardunio33 subscribed to topics: z
+2024-06-11 16:31:46 info: Client Ardunio33 unsubscribed to topics: z
+2024-06-11 16:31:46 info: z
+2024-06-11 16:31:51 info: Client Ardunio33 subscribed to topics: z
+2024-06-11 16:31:56 info: Client Ardunio33 unsubscribed to topics: z
+2024-06-11 16:31:56 info: z
+2024-06-11 16:33:34 info: server running and listening on port
+2024-06-11 16:33:36 info: Client Connected: Ardunio33
+2024-06-11 16:33:43 info: Client Ardunio33 subscribed to topics: z
+2024-06-11 16:33:43 info: [object Object]
+2024-06-11 16:36:20 info: server running and listening on port
+2024-06-11 16:36:22 info: Client Connected: Ardunio33
+2024-06-11 16:36:23 info: Client Ardunio33 subscribed to topics: z
+2024-06-11 16:36:23 info: [object Object]
+2024-06-11 16:36:23 info: [object Object],[object Object]
+2024-06-11 16:36:47 info: server running and listening on port
+2024-06-11 16:36:49 info: Client Connected: Ardunio33
+2024-06-11 16:36:51 info: Client Ardunio33 subscribed to topics: z
+2024-06-11 16:36:51 info: [object Object]
+2024-06-11 16:36:51 info: [object Object],[object Object]
+2024-06-11 16:38:57 info: server running and listening on port
+2024-06-11 16:39:00 info: Client Connected: Ardunio33
+2024-06-11 16:39:00 info: Client Ardunio33 subscribed to topics: z
+2024-06-11 16:39:00 info: [object Object],[object Object]
+2024-06-11 16:39:02 info: Client Ardunio33 unsubscribed to topics: z
+2024-06-11 16:39:02 info: z
+2024-06-11 16:39:02 info: [object Object],[object Object]
+2024-06-11 16:39:11 info: Client Ardunio33 subscribed to topics: z
+2024-06-11 16:39:11 info: [object Object],[object Object]
+2024-06-11 16:39:12 info: Client Ardunio33 unsubscribed to topics: z
+2024-06-11 16:39:12 info: z
+2024-06-11 16:39:12 info: [object Object],[object Object]
+2024-06-11 16:39:15 info: Client Ardunio33 subscribed to topics: fdsa
+2024-06-11 16:39:15 info: [object Object],[object Object]
+2024-06-11 16:39:17 info: Client Ardunio33 unsubscribed to topics: fdsa
+2024-06-11 16:39:17 info: fdsa
+2024-06-11 16:39:17 info: [object Object],[object Object]
+2024-06-11 16:39:23 info: Client Disconnected: Ardunio33
+2024-06-11 16:39:55 info: Client Connected: Ardunio33
+2024-06-11 16:40:09 info: Client Ardunio33 published topic z: 
+2024-06-11 16:40:11 info: Client Ardunio33 published topic z: 
+2024-06-11 16:40:13 info: Client Ardunio33 published topic z: vds
+2024-06-11 16:40:14 info: Client Ardunio33 published topic z: vds
+2024-06-11 16:40:15 info: Client Ardunio33 published topic z: vds
+2024-06-11 16:40:15 info: Client Ardunio33 published topic z: vds
+2024-06-11 16:40:15 info: Client Ardunio33 published topic z: vds
+2024-06-11 16:40:15 info: Client Ardunio33 published topic z: vds
+2024-06-11 16:40:15 info: Client Ardunio33 published topic z: vds
+2024-06-11 16:44:40 info: Client Disconnected: Ardunio33
+2024-06-11 16:44:45 info: Client Connected: Ardunio33
+2024-06-11 16:44:46 info: server running and listening on port
+2024-06-11 16:44:52 info: Client Connected: Ardunio33
+2024-06-11 16:44:54 info: Client Ardunio33 published topic z: vds
+2024-06-11 16:45:24 info: server running and listening on port
+2024-06-11 16:45:24 info: Client Connected: Ardunio33
+2024-06-11 16:45:30 info: Client Ardunio33 published topic z: vds
+2024-06-11 16:45:31 info: Client Ardunio33 published topic z: vds
+2024-06-11 16:45:31 info: Client Ardunio33 published topic z: vds
+2024-06-11 16:47:28 info: server running and listening on port
+2024-06-11 16:47:32 info: Client Connected: Ardunio33
+2024-06-11 16:47:33 info: Client Ardunio33 published topic z: vds
+2024-06-11 16:47:34 info: Client Ardunio33 published topic z: vds
+2024-06-11 16:47:39 info: Client Ardunio33 subscribed to topics: z
+2024-06-11 16:49:42 info: server running and listening on port
+2024-06-11 16:49:47 info: Client Connected: Ardunio33
+2024-06-11 16:49:48 info: Client Ardunio33 subscribed to topics: z
+2024-06-11 16:50:21 info: server running and listening on port
+2024-06-11 16:50:22 info: Client Connected: Ardunio33
+2024-06-11 16:50:23 info: Client Ardunio33 subscribed to topics: z
+2024-06-11 16:50:28 info: Client Ardunio33 unsubscribed to topics: z
+2024-06-11 16:50:28 info: z
+2024-06-11 16:50:30 info: Client Ardunio33 subscribed to topics: z
+2024-06-11 16:50:35 info: Client Ardunio33 published topic z: vds
+2024-06-11 16:50:36 info: Client Ardunio33 published topic z: vds
+2024-06-11 16:50:37 info: Client Ardunio33 published topic z: vds
+2024-06-11 16:50:37 info: Client Ardunio33 published topic z: vds
+2024-06-11 16:50:37 info: Client Ardunio33 published topic z: vds
+2024-06-11 16:50:37 info: Client Ardunio33 published topic z: vds
+2024-06-11 16:50:38 info: Client Ardunio33 published topic z: vds
+2024-06-11 16:50:55 info: Client Disconnected: Ardunio33
+2024-06-11 16:50:55 info: Client Ardunio33 unsubscribed to topics: z
+2024-06-11 16:50:55 info: z
+2024-06-11 17:34:18 info: server running and listening on port
+2024-06-11 17:34:39 info: Client Connected: Ardunio33
+2024-06-11 17:34:57 info: Client Ardunio33 published topic z: 
+2024-06-11 17:36:08 info: server running and listening on port
+2024-06-11 17:36:10 info: Client Connected: Ardunio33
+2024-06-11 17:36:18 info: Client Ardunio33 published topic z: 
+2024-06-11 17:36:22 info: Client Ardunio33 subscribed to topics: z
+2024-06-11 17:36:27 info: Client Ardunio33 unsubscribed to topics: z
+2024-06-11 17:36:27 info: z
+2024-06-11 17:36:28 info: Client Ardunio33 subscribed to topics: z
+2024-06-11 17:37:05 info: Client Disconnected: Ardunio33
+2024-06-11 17:37:05 info: Client Ardunio33 unsubscribed to topics: z
+2024-06-11 17:37:05 info: z
+2024-06-11 17:37:11 info: server running and listening on port
+2024-06-11 17:37:13 info: Client Connected: Ardunio33
+2024-06-11 17:37:17 info: Client Ardunio33 published topic z: 
+2024-06-11 17:41:40 info: server running and listening on port
+2024-06-11 17:41:42 info: Client Connected: Ardunio33
+2024-06-11 17:41:49 info: Client Ardunio33 subscribed to topics: z
+2024-06-11 17:41:52 info: Client Ardunio33 unsubscribed to topics: z
+2024-06-11 17:41:52 info: z
+2024-06-11 17:41:53 info: Client Ardunio33 subscribed to topics: z
+2024-06-11 17:41:56 info: Client Ardunio33 published topic z: 
+2024-06-11 17:41:56 info: Client Ardunio33 published topic z: 
+2024-06-11 17:41:58 info: Client Ardunio33 unsubscribed to topics: z
+2024-06-11 17:41:58 info: z
+2024-06-11 17:41:59 info: Client Ardunio33 subscribed to topics: z
+2024-06-11 17:42:05 info: Client Ardunio33 subscribed to topics: fdsa
+2024-06-11 17:42:10 info: Client Ardunio33 unsubscribed to topics: z
+2024-06-11 17:42:10 info: z
+2024-06-11 17:42:13 info: Client Ardunio33 unsubscribed to topics: fdsa
+2024-06-11 17:42:13 info: fdsa
+2024-06-11 17:42:21 info: Client Ardunio33 published topic fdsa: 
+2024-06-11 17:42:22 info: Client Ardunio33 published topic fdsa: 
+2024-06-11 17:42:23 info: Client Ardunio33 published topic fdsa: 
+2024-06-11 17:42:23 info: Client Ardunio33 published topic fdsa: 
+2024-06-11 17:42:24 info: Client Ardunio33 published topic fdsa: 
+2024-06-11 17:42:24 info: Client Ardunio33 published topic fdsa: 
+2024-06-11 17:42:24 info: Client Ardunio33 published topic fdsa: 
+2024-06-11 17:42:24 info: Client Ardunio33 published topic fdsa: 
+2024-06-11 17:42:24 info: Client Ardunio33 published topic fdsa: 
+2024-06-11 17:42:25 info: Client Ardunio33 published topic fdsa: 
+2024-06-11 17:42:25 info: Client Ardunio33 published topic fdsa: 
+2024-06-11 17:42:25 info: Client Ardunio33 published topic fdsa: 
+2024-06-11 17:43:16 info: server running and listening on port
+2024-06-11 17:43:20 info: Client Connected: Ardunio33
+2024-06-11 17:43:21 info: Client Ardunio33 published topic fdsa: 
+2024-06-11 17:43:26 info: Client Ardunio33 subscribed to topics: fdsa
+2024-06-11 17:43:27 info: Client Ardunio33 unsubscribed to topics: fdsa
+2024-06-11 17:43:27 info: fdsa
+2024-06-11 17:43:28 info: Client Ardunio33 subscribed to topics: fdsa
+2024-06-11 17:43:29 info: Client Ardunio33 unsubscribed to topics: fdsa
+2024-06-11 17:43:29 info: fdsa
+2024-06-11 17:43:34 info: Client Ardunio33 published topic z: 
+2024-06-11 17:43:39 info: Client Ardunio33 subscribed to topics: z
+2024-06-11 17:43:41 info: Client Ardunio33 unsubscribed to topics: z
+2024-06-11 17:43:41 info: z
+2024-06-11 17:43:43 info: Client Ardunio33 subscribed to topics: z
+2024-06-11 17:43:49 info: Client Disconnected: Ardunio33
+2024-06-11 17:43:49 info: Client Ardunio33 unsubscribed to topics: z
+2024-06-11 17:43:49 info: z
+2024-06-11 17:49:39 info: server running and listening on port
+2024-06-11 17:49:41 info: Client Connected: Ardunio33
+2024-06-11 17:49:55 info: Client Connected: Ardunio
+2024-06-11 17:50:18 info: Client Ardunio published topic z: 
+2024-06-11 17:50:33 info: Client Ardunio subscribed to topics: fdsa
+2024-06-11 17:50:35 info: Client Ardunio unsubscribed to topics: fdsa
+2024-06-11 17:50:35 info: fdsa
+2024-06-11 17:50:48 info: Client Ardunio subscribed to topics: z
+2024-06-11 17:50:53 info: Client Ardunio unsubscribed to topics: z
+2024-06-11 17:50:53 info: z
+2024-06-11 17:50:56 info: Client Ardunio subscribed to topics: z
+2024-06-11 17:50:57 info: Client Ardunio unsubscribed to topics: z
+2024-06-11 17:50:57 info: z
+2024-06-11 17:50:58 info: Client Ardunio subscribed to topics: z
+2024-06-11 17:51:03 info: Client Disconnected: Ardunio
+2024-06-11 17:51:03 info: Client Ardunio unsubscribed to topics: z
+2024-06-11 17:51:03 info: z
+2024-06-11 17:51:07 info: Client Disconnected: Ardunio33
+2024-06-12 16:02:25 info: server running and listening on port
+2024-06-12 16:03:09 info: Client Connected: Ardunio33
+2024-06-12 16:03:14 info: Client Ardunio33 published topic z: 
+2024-06-12 16:05:13 info: server running and listening on port
+2024-06-12 16:05:15 info: Client Connected: Ardunio33
+2024-06-12 16:05:20 info: Client Ardunio33 published topic z: 
+2024-06-12 16:05:24 info: Client Ardunio33 subscribed to topics: z
+2024-06-12 16:05:25 info: Client Ardunio33 unsubscribed to topics: z
+2024-06-12 16:05:26 info: Client Ardunio33 subscribed to topics: z
+2024-06-12 16:05:28 info: Client Ardunio33 unsubscribed to topics: z
+2024-06-12 16:05:32 info: Client Disconnected: Ardunio33
+2024-06-12 16:05:48 info: Client Connected: Ardunio33
+2024-06-12 16:05:53 info: Client Ardunio33 published topic z: 
+2024-06-12 16:05:58 info: Client Ardunio33 subscribed to topics: z
+2024-06-12 16:06:02 info: Client Disconnected: Ardunio33
+2024-06-12 16:06:02 info: Client Ardunio33 unsubscribed to topics: z
+2024-06-12 16:06:40 info: server running and listening on port
+2024-06-12 16:06:46 info: Client Connected: Ardunio33
+2024-06-12 16:06:51 info: Client Ardunio33 subscribed to topics: z
+2024-06-12 16:06:53 info: Client Ardunio33 unsubscribed to topics: z
+2024-06-12 16:06:53 info: Client Ardunio33 subscribed to topics: z
+2024-06-12 16:06:54 info: Client Ardunio33 unsubscribed to topics: z
+2024-06-12 16:06:54 info: Client Ardunio33 subscribed to topics: z
+2024-06-12 16:06:55 info: Client Ardunio33 unsubscribed to topics: z
+2024-06-12 16:06:56 info: Client Ardunio33 subscribed to topics: z
+2024-06-12 16:06:57 info: Client Ardunio33 unsubscribed to topics: z
+2024-06-12 16:07:43 info: server running and listening on port
+2024-06-12 16:07:48 info: Client Connected: Ardunio33
+2024-06-12 16:07:51 info: Client Ardunio33 subscribed to topics: z
+2024-06-12 16:07:52 info: Client Ardunio33 unsubscribed to topics: z
+2024-06-12 16:07:53 info: Client Ardunio33 subscribed to topics: z
+2024-06-12 16:07:53 info: Client Ardunio33 unsubscribed to topics: z
+2024-06-12 16:07:54 info: Client Ardunio33 subscribed to topics: z
+2024-06-12 16:07:55 info: Client Ardunio33 unsubscribed to topics: z
+2024-06-12 16:08:20 info: server running and listening on port
+2024-06-12 16:08:24 info: Client Connected: Ardunio33
+2024-06-12 16:08:25 info: Client Ardunio33 subscribed to topics: z
+2024-06-12 16:08:26 info: Client Ardunio33 unsubscribed to topics: z
+2024-06-12 16:08:27 info: Client Ardunio33 subscribed to topics: z
+2024-06-12 16:08:28 info: Client Ardunio33 unsubscribed to topics: z
+2024-06-12 16:08:28 info: Client Ardunio33 subscribed to topics: z
+2024-06-12 16:08:29 info: Client Ardunio33 unsubscribed to topics: z
+2024-06-12 16:08:30 info: Client Ardunio33 subscribed to topics: z
+2024-06-12 16:08:31 info: Client Ardunio33 unsubscribed to topics: z
+2024-06-12 16:09:08 info: Client Ardunio33 subscribed to topics: z
+2024-06-12 16:09:08 info: Client Ardunio33 unsubscribed to topics: z
+2024-06-12 16:09:12 info: server running and listening on port
+2024-06-12 16:09:16 info: Client Connected: Ardunio33
+2024-06-12 16:09:17 info: Client Ardunio33 subscribed to topics: z
+2024-06-14 22:00:03 info: server running and listening on port
+2024-06-14 22:00:22 info: Client Connected: Ardunio
+2024-06-14 22:00:34 info: Client Disconnected: Ardunio
+2024-06-14 22:00:34 info: Client Connected: Ardunio
+2024-06-14 22:00:39 info: Client Disconnected: Ardunio
+2024-06-14 22:00:39 info: Client Connected: Ardunio
+2024-06-14 22:00:41 info: Client Disconnected: Ardunio
+2024-06-14 22:00:44 info: Client Connected: Ardunio
+2024-06-14 22:00:49 info: Client Connected: Ardunio33
+2024-06-14 22:00:51 info: Client Disconnected: Ardunio
+2024-06-14 22:00:51 info: Client Connected: Ardunio
+2024-06-14 22:07:52 info: server running and listening on port
+2024-06-14 22:07:54 info: Client Connected: Ardunio33
+2024-06-14 22:07:56 info: InfoDetail is empty
+2024-06-14 22:07:56 info: InfoDetail is empty
+2024-06-14 22:07:56 info: InfoDetail is empty
+2024-06-14 22:07:56 info: InfoDetail is empty
+2024-06-14 22:07:56 info: InfoDetail is empty
+2024-06-14 22:07:56 info: InfoDetail is empty
+2024-06-14 22:07:57 info: InfoDetail is empty
+2024-06-14 22:07:57 info: InfoDetail is empty
+2024-06-14 22:07:57 info: InfoDetail is empty
+2024-06-14 22:07:59 info: Client Connected: Ardunio
+2024-06-14 22:07:59 info: Client Ardunio published topic state/info: {"name":"Lia","age":5}
+2024-06-14 22:07:59 info: Client Ardunio published topic state/info: {"name":"Lia","age":5}
+2024-06-14 22:08:00 info: Client Ardunio published topic state/info: {"name":"Lia","age":5}
+2024-06-14 22:08:00 info: Client Ardunio published topic state/info: {"name":"Lia","age":5}
+2024-06-14 22:08:00 info: Client Ardunio published topic state/info: {"name":"Lia","age":5}
+2024-06-14 22:08:00 info: Client Ardunio published topic state/info: {"name":"Lia","age":5}
+2024-06-14 22:08:00 info: Client Ardunio published topic state/info: {"name":"Lia","age":5}
+2024-06-14 22:08:00 info: Client Ardunio published topic state/info: {"name":"Lia","age":5}
+2024-06-14 22:08:01 info: Client Ardunio published topic state/info: {"name":"Lia","age":5}
+2024-06-14 22:08:01 info: Client Ardunio published topic state/info: {"name":"Lia","age":5}
+2024-06-14 22:08:01 info: Client Ardunio published topic state/info: {"name":"Lia","age":5}
+2024-06-14 22:08:01 info: Client Ardunio published topic state/info: {"name":"Lia","age":5}
+2024-06-14 22:08:01 info: Client Ardunio published topic state/info: {"name":"Lia","age":5}
+2024-06-14 22:08:06 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:06 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:07 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:07 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:07 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:07 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:07 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:07 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:07 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:08 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:08 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:08 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:08 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:08 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:08 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:08 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:09 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:09 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:09 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:09 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:09 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:09 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:09 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:10 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:10 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:10 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:10 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:10 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:10 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:11 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:11 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:11 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:11 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:11 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:11 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:11 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:12 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:12 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:12 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:12 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:12 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:12 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:12 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:13 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:13 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:13 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:13 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:13 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:13 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:13 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:14 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:14 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:14 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:14 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:14 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:14 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:15 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:15 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:15 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:15 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:15 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:15 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:16 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:16 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:16 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:17 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:18 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:18 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:18 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:18 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:18 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:18 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:19 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:19 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:19 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:19 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:19 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:19 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:19 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:20 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:20 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:20 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:22 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:23 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:23 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:23 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:23 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:23 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:23 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:24 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:24 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:24 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:25 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:25 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:25 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:25 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:26 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:26 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:26 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:27 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:28 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:31 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:31 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:31 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:32 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:32 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:32 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:32 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:32 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:32 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:33 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:33 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:33 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:33 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:08:33 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:10:02 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:10:02 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:10:02 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:10:02 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:10:02 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:10:03 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:10:03 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:10:03 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:10:03 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:10:03 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:10:05 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:10:05 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:10:05 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:10:05 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:10:06 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:10:06 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:10:06 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:10:06 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:10:06 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:10:06 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:10:07 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:10:07 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:10:07 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:10:07 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:10:07 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:10:09 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:10:09 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:10:10 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:10:10 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:10:13 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:10:13 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:10:13 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:10:14 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:10:14 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:10:14 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:10:14 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:10:14 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:10:14 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:10:15 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:10:15 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:10:15 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:10:15 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:10:15 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:10:15 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:10:16 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:10:16 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:10:16 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:10:16 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:10:16 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:10:16 info: Client Ardunio published topic state/info: {"name":"Lia","age":77}
+2024-06-14 22:10:41 info: Client Ardunio published topic state/info: {"name":"Lia","age":7}
+2024-06-14 22:10:50 info: Client Ardunio published topic state/info: {"name":"Lia","age":7}
+2024-06-14 22:10:51 info: Client Ardunio published topic state/info: {"name":"Lia","age":7}
+2024-06-14 22:10:51 info: Client Ardunio published topic state/info: {"name":"Lia","age":7}
+2024-06-14 22:10:51 info: Client Ardunio published topic state/info: {"name":"Lia","age":7}
+2024-06-14 22:10:51 info: Client Ardunio published topic state/info: {"name":"Lia","age":7}
+2024-06-14 22:10:51 info: Client Ardunio published topic state/info: {"name":"Lia","age":7}
+2024-06-14 22:11:27 info: Client Ardunio published topic state/info: {"name":"Lia","age":7}
+2024-06-14 22:11:28 info: Client Ardunio published topic state/info: {"name":"Lia","age":7}
+2024-06-14 22:11:28 info: Client Ardunio published topic state/info: {"name":"Lia","age":7}
+2024-06-14 22:11:28 info: Client Ardunio published topic state/info: {"name":"Lia","age":7}
+2024-06-14 22:11:32 info: Client Ardunio published topic state/info: {"name":"Lia","age":7}
+2024-06-14 22:11:32 info: Client Ardunio published topic state/info: {"name":"Lia","age":7}
+2024-06-14 22:11:32 info: Client Ardunio published topic state/info: {"name":"Lia","age":7}
