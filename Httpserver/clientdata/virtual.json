@@ -1,0 +1,9 @@
+[
+  {
+    "topic": "UUUU",
+    "content": "",
+    "clientID": "WebMQTTclient",
+    "keepAliveTime": "60",
+    "ConnetionTimeout": "30"
+  }
+]

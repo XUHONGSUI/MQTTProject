@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MQTT Virtual Device</title>
+    <link rel="stylesheet" href="../css/mqtt.css" type="text/css">
+    <style type="text/css">
+     .header{
+        width: 400px;
+        height: 40px;
+        border: 1px solid black;
+     }
+
+     .header span{
+        display: inline-block;
+        height: 40px;
+        width: 100px;
+        text-align: center;
+        line-height: 40px;
+     }
+
+     #Subtopic{
+        width: 150px;
+     }
+     #subscribe{
+        background-color: aquamarine;
+     }
+     #subscribetopics{
+        width: 393px;
+        height: 273px;
+     }
+
+     h3{
+     display: inline;
+     }
+    </style>
+</head>
+<body>
+    <h2 id="MQTTclient">MQTT Virtual Device</h2>
+    <h3 id="MQTTserver">MQTT settings</h3>
+    <input type="text" id="status" name="status" value="Disconnected" readonly style="width: 100px;"> 
+    <div id="MQTTserver">
+
+            <label for="host">Host:</label>
+            <input type="text" id="host" name="host" value="localhost">
+            <label for="port">Port:</label>
+            <input type="text" id="port" name="port" value="8080">   
+            <button  id="connect" onclick="connect()">connect</button>
+            <button  id="disconnect" onclick="disconnect()">disconnect</button>
+    </div>  
+   
+   <div class="mqttclientcontainer">    
+        <div class="header">
+            <span class="background">Settings</span><span>Publish</span><span>Subscribe</span>
+        </div>
+        <div class="mqttclientbody" id="mqttbody">
+            <div id="clientsettings" class="show">
+                <label for="clientID" class="colon-aligned-clientID">ClientID:</label>
+                <input type="text" id="clientID" name="clientID" value="WebMQTTclient"><br>
+                <label for="keepAliveTime" class="colon-aligned">KeepAliveTime:</label>
+                <input type="text" id="keepAliveTime" name="keepAliveTime" value="60"><br>
+                <label for="ConnetionTimeout" class="colon-timeout">Connection Timeout:</label>
+                <input type="text" id="ConnetionTimeout" name="ConnetionTimeout" value="30"><br>
+
+            </div>
+            <div id="publish">
+                <label for="topic">Topic:</label>
+                <input type="text" id="topic" name="topic">
+                <select id="mySelect">
+                </select>
+                <button onclick="publish()" id="publishbutton" >publish</button><br>
+                <textarea id="publishmeaasge" name="publishmeaasge"></textarea>
+            </div>
+            <div id="subscribe">
+                <label for="Subtopic" style="width: 400px;">Topic:</label>
+                <input type="text" id="Subtopic" name="Subtopic">
+                <button id="subscribebutton" onclick="subscribe()">subscribe</button>
+                <buttoN id="unsubscribebutton" onclick="unsubscribe()">unsubscribe</button><br>
+                <textarea id="subscribetopics" readonly></textarea>
+            </div>
+        </div>
+   </div>
+    
+</body>
+<script src="../script/mqtt.min.js"></script>
+<script>
+
+// Connect to the MQTT broker over WebSocket
+
+addEventListener('load',()=>{
+       let spans = document.getElementsByTagName('span');
+       let divs  = document.getElementById('mqttbody').getElementsByTagName('div');
+
+       for(let i=0;i<spans.length;i++){
+        spans[i].onclick =function(){
+            //define a new artribute
+            spans[i].index = i;
+            for(let i=0;i<spans.length;i++){
+                spans[i].className = '';
+            }
+
+            this.className = 'background';
+
+            for(let i=0;i<divs.length;i++){
+                divs[i].className = '';
+            }
+            divs[this.index].className='show';
+        }
+       }
+});
+
+async function  FetchData(url){
+   try {
+        const response = await fetch(url, { method: 'GET'});
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Error fetching client data:', error);
+        throw error; 
+    }
+
+}
+
+
+async function  postData(url, data) {
+    try {
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: data
+        });
+        const result = await response.json();
+        return result;
+    } catch (error) {
+        console.error('Error posting data:', error);
+        throw error;
+    }
+}
+////////////////////////////////////////////////////////////////////////////////////////
+
+let client;
+
+async function connect(){
+
+   let clientID =document.getElementById('clientID').value;
+   let keepAliveTime =document.getElementById('keepAliveTime').value;
+   let ConnectionTimeout =document.getElementById('ConnetionTimeout').value;
+
+   let options = {
+            clientId: clientID,
+            keepalive: Number(keepAliveTime),
+            reconnectPeriod: 1000,
+            connectTimeout: Number(ConnectionTimeout) * 1000,
+        }; 
+   let host =  document.getElementById('host').value;
+   let port =  document.getElementById('port').value;
+
+   let urlclient ='http://localhost:3000/clientdata';
+   let clientdata = await FetchData(urlclient);
+   let idcheck = clientdata.find((obj) => obj.id === clientID && obj.state === "True");
+   
+   if(idcheck){
+     alert(`clientID ${clientID} already existed!! Enter a new one.`);
+     return;
+   }
+   
+   if(host==""){
+      alert("Please enter hostname");
+      return;
+   }
+   
+   if(port==""){
+     alert("Please enter port");
+     return;
+   }
+
+   let url = 'ws://'+host+':'+port;
+   client = mqtt.connect(url,options);
+   
+   client.on('connect',()=>{
+       document.getElementById('status').value = "Connected";
+       document.getElementById('publishbutton').disabled = false;
+       document.getElementById('subscribebutton').disabled = false;
+       document.getElementById('unsubscribebutton').disabled =false;
+   });
+
+   client.on('error', (error) => {
+            console.error('Connection failed: ', error);
+            client.end();
+            document.getElementById('publishbutton').disabled = true;
+            document.getElementById('subscribebutton').disabled = true;
+            document.getElementById('unsubscribebutton').disabled =true;
+        });
+
+   client.on('message', (topic, message) => {      
+        const content =document.getElementById('subscribetopics');
+        content.textContent = content.textContent + `Topic: ${topic} - Message: ${message.toString()}`+"\n";
+    });
+    
+    client.on('close', () => {
+       document.getElementById('status').value = "Disconnected";
+       console.log('Connection closed');
+       let  urlclient = 'http://localhost:3000/clientstateupdate';
+       postData(urlclient,JSON.stringify ({id:clientID,state:"False"}));
+       client.end();
+       document.getElementById('publishbutton').disabled = true;
+       document.getElementById('subscribebutton').disabled = true;
+       document.getElementById('unsubscribebutton').disabled =true;
+   });
+}
+
+
+function subscribe(){
+    let topic = document.getElementById('Subtopic').value;
+
+   if (topic==""){
+    alert("Please input topic");
+    return;
+    }
+
+    client.subscribe(topic, (err) => {
+                if (err) {
+                    console.error('Subscription error: ', err);
+                } else {
+                    console.log(`Subscribed to topic: ${topic}`);
+                }
+            });
+}
+
+
+function unsubscribe(){
+    let topic = document.getElementById('Subtopic').value;
+    client.unsubscribe(topic, (err) => {
+                if (err) {
+                    console.error('Unsubscription error: ', err);
+                } else {
+                    console.log(`Unsubscribed from topic: ${topic}`);
+                }
+            });
+}
+
+function disconnect(){
+    client.end();
+    document.getElementById('status').value = "Disconnected";
+}
+
+async function publish(){
+   //get topics and content
+   let topic   = document.getElementById('topic').value;
+   let select  = document.getElementById('mySelect');
+   let content = document.getElementById('publishmeaasge').value;
+   //send client configuration
+   let clientID = document.getElementById('clientID').value;
+   let keepAliveTime = document.getElementById('keepAliveTime').value;
+   let ConnetionTimeout = document.getElementById('ConnetionTimeout').value;
+
+   if(clientID==""){
+    alert("Please enter a clientID");
+    return;
+   }
+
+   if(topic==""){
+    alert("Please enter a topic");
+    return;
+   }
+
+    let message = document.getElementById('publishmeaasge').value;
+    client.publish(topic, message, (err) => {
+                if (err) {
+                    console.error('Publish error: ', err);
+                } else {
+                    console.log(`Published message: ${message} to topic: ${topic}`);
+                }
+            });
+    
+    
+    let urlpublish = 'http://localhost:3000/virtualpublish';
+    let data = JSON.stringify({
+        topic:topic,content:content,
+        clientID:clientID,
+        keepAliveTime:keepAliveTime,
+        ConnetionTimeout:ConnetionTimeout});
+    postData(urlpublish,data);
+    
+    let show =document.getElementById('publish').show;
+    let urlPublish = 'http://localhost:3000/getpublish';
+    let publishtopics = FetchData(urlPublish);
+    
+
+    publishtopics.then((data)=>{
+        if(data !=null){
+        let jsonData = JSON.parse(JSON.stringify(data));
+        jsonData = jsonData.filter((obj) => obj.clientID === clientID);
+        jsonData.forEach(element => {
+        let option =document.createElement('option');
+        option.text =element.topic;
+        document.getElementById('mySelect').appendChild(option);
+        });
+        }
+    });
+}
+
+
+window.onload = function(){
+    document.getElementById('publishbutton').disabled = true;
+    document.getElementById('subscribebutton').disabled = true;
+    document.getElementById('unsubscribebutton').disabled =true;
+}
+
+
+
+</script>
+</html>

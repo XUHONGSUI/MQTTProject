@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MQTT WebSocket Client</title>
+</head>
+<body>
+    <h1>MQTT WebSocket Client</h1>
+    <div>
+        <label for="topic">Topic:</label>
+        <input type="text" id="topic" value="test/topic">
+        <button id="subscribe">Subscribe</button>
+        <button id="unsubscribe">Unsubscribe</button>
+    </div>
+    <div>
+        <label for="message">Message:</label>
+        <input type="text" id="message">
+        <button id="publish">Publish</button>
+    </div>
+    <div id="messages">
+        <h2>Messages</h2>
+        <ul id="messageList"></ul>
+    </div>
+
+    <!-- Include the MQTT.js library -->
+    <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+    <script>
+        // Connect to the MQTT broker over WebSocket
+        const client = mqtt.connect('ws://localhost:8080');
+
+        // Connection success
+        client.on('connect', () => {
+            console.log('Connected to MQTT broker over WebSocket');
+            document.getElementById('subscribe').disabled = false;
+            document.getElementById('unsubscribe').disabled = false;
+            document.getElementById('publish').disabled = false;
+        });
+
+        // Connection failure
+        client.on('error', (error) => {
+            console.error('Connection failed: ', error);
+        });
+
+        // Handle incoming messages
+        client.on('message', (topic, message) => {
+            const messageList = document.getElementById('messageList');
+            const listItem = document.createElement('li');
+            listItem.textContent = `Topic: ${topic} - Message: ${message.toString()}`;
+            messageList.appendChild(listItem);
+        });
+
+        // Subscribe to a topic
+        document.getElementById('subscribe').addEventListener('click', () => {
+            const topic = document.getElementById('topic').value;
+            client.subscribe(topic, (err) => {
+                if (err) {
+                    console.error('Subscription error: ', err);
+                } else {
+                    console.log(`Subscribed to topic: ${topic}`);
+                }
+            });
+        });
+
+        // Unsubscribe from a topic
+        document.getElementById('unsubscribe').addEventListener('click', () => {
+            const topic = document.getElementById('topic').value;
+            client.unsubscribe(topic, (err) => {
+                if (err) {
+                    console.error('Unsubscription error: ', err);
+                } else {
+                    console.log(`Unsubscribed from topic: ${topic}`);
+                }
+            });
+        });
+
+        // Publish a message to a topic
+        document.getElementById('publish').addEventListener('click', () => {
+            const topic = document.getElementById('topic').value;
+            const message = document.getElementById('message').value;
+            client.publish(topic, message, (err) => {
+                if (err) {
+                    console.error('Publish error: ', err);
+                } else {
+                    console.log(`Published message: ${message} to topic: ${topic}`);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

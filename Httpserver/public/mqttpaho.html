@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MQTT Virtual Device</title>
+    <link rel="stylesheet" href="../css/mqtt.css" type="text/css">
+    <style type="text/css">
+     .header{
+        width: 400px;
+        height: 40px;
+        border: 1px solid black;
+     }
+
+     .header span{
+        display: inline-block;
+        height: 40px;
+        width: 100px;
+        text-align: center;
+        line-height: 40px;
+     }
+
+     #Subtopic{
+        width: 150px;
+     }
+     #subscribe{
+        background-color: aquamarine;
+     }
+     #subscribetopics{
+        width: 393px;
+        height: 273px;
+     }
+
+     h3{
+     display: inline;
+     }
+    </style>
+</head>
+<body>
+    <h2 id="MQTTclient">MQTT Virtual Device</h2>
+    <h3 id="MQTTserver">MQTT settings</h3>
+    <input type="text" id="status" name="status" value="Disconnected" readonly style="width: 100px;"> 
+    <div id="MQTTserver">
+
+            <label for="host">Host:</label>
+            <input type="text" id="host" name="host" value="localhost">
+            <label for="port">Port:</label>
+            <input type="text" id="port" name="port" value="8080">   
+            <button  id="connect" onclick="connect()">connect</button>
+            <button  id="disconnect" onclick="disconnect()">disconnect</button>
+    </div>  
+   
+   <div class="mqttclientcontainer">    
+        <div class="header">
+            <span class="background">Settings</span><span>Publish</span><span>Subscribe</span>
+        </div>
+        <div class="mqttclientbody" id="mqttbody">
+            <div id="clientsettings" class="show">
+                <label for="clientID" class="colon-aligned-clientID">ClientID:</label>
+                <input type="text" id="clientID" name="clientID" value="WebMQTTclient"><br>
+                <label for="keepAliveTime" class="colon-aligned">KeepAliveTime:</label>
+                <input type="text" id="keepAliveTime" name="keepAliveTime" value="60"><br>
+                <label for="ConnetionTimeout" class="colon-timeout">Connection Timeout:</label>
+                <input type="text" id="ConnetionTimeout" name="ConnetionTimeout" value="30"><br>
+
+            </div>
+            <div id="publish">
+                <label for="topic">Topic:</label>
+                <input type="text" id="topic" name="topic">
+                <select id="mySelect">
+                </select>
+                <button onclick="publish()">publish</button><br>
+                <textarea id="publishmeaasge" name="publishmeaasge"></textarea>
+            </div>
+            <div id="subscribe">
+                <label for="Subtopic" style="width: 400px;">Topic:</label>
+                <input type="text" id="Subtopic" name="Subtopic">
+                <button id="subscribe" onclick="subscribe()">subscribe</button>
+                <buttoN id="unsubscribe" onclick="unsubscribe()">unsubscribe</button><br>
+                <textarea id="subscribetopics" readonly></textarea>
+            </div>
+        </div>
+   </div>
+    
+</body>
+<script src="../script/paho-mqtt-min.js"></script>
+<script>
+
+let client;
+
+async function connect() {
+    let clientID = document.getElementById('clientID').value;
+    let keepAliveTime = Number(document.getElementById('keepAliveTime').value);
+    let ConnectionTimeout = Number(document.getElementById('ConnetionTimeout').value);
+    let host = document.getElementById('host').value;
+    let port = document.getElementById('port').value;
+
+    let urlclient = 'http://localhost:3000/clientdata';
+    let clientdata = await FetchData(urlclient);
+    // let idcheck = clientdata.find((obj) => obj.id === clientID);
+
+    // if (idcheck) {
+    //     alert(`clientID ${clientID} already exist!! Enter a new one.`);
+    //     return;
+    // }
+
+    if (host == "") {
+        alert("Please enter hostname");
+        return;
+    }
+
+    if (port == "") {
+        alert("Please enter port");
+        return;
+    }
+
+    client = new Paho.MQTT.Client(host, Number(port), clientID);
+
+    client.onConnectionLost = onConnectionLost;
+    client.onMessageArrived = onMessageArrived;
+
+    let options = {
+        timeout: ConnectionTimeout,
+        keepAliveInterval: keepAliveTime,
+        onSuccess: onConnect,
+        onFailure: onFailure
+    };
+
+    client.connect(options);
+}
+
+function onConnect() {
+    document.getElementById('status').value = "Connected";
+    console.log('Connected to MQTT broker over WebSocket');
+}
+
+function onFailure(error) {
+    console.error('Connection failed: ', error);
+}
+
+function onConnectionLost(responseObject) {
+    if (responseObject.errorCode !== 0) {
+        console.log('Connection lost: ' + responseObject.errorMessage);
+        document.getElementById('status').value = "Disconnected";
+    }
+}
+
+function onMessageArrived(message) {
+    const content = document.getElementById('subscribetopics');
+    content.textContent = content.textContent + `Topic: ${message.destinationName} - Message: ${message.payloadString}` + "\n";
+}
+
+function subscribe() {
+    let topic = document.getElementById('Subtopic').value;
+    if (topic == "") {
+        alert("Please input topic");
+        return;
+    }
+
+    client.subscribe(topic, {
+        onSuccess: () => {
+            console.log(`Subscribed to topic: ${topic}`);
+        },
+        onFailure: (err) => {
+            console.error('Subscription error: ', err);
+        }
+    });
+}
+
+function unsubscribe() {
+    let topic = document.getElementById('Subtopic').value;
+    client.unsubscribe(topic, {
+        onSuccess: () => {
+            console.log(`Unsubscribed from topic: ${topic}`);
+        },
+        onFailure: (err) => {
+            console.error('Unsubscription error: ', err);
+        }
+    });
+}
+
+function disconnect() {
+    client.disconnect();
+    document.getElementById('status').value = "Disconnected";
+}
+
+function publish() {
+    let topic = document.getElementById('topic').value;
+    let message = document.getElementById('publishmeaasge').value;
+
+    if (topic == "") {
+        alert("Please enter a topic");
+        return;
+    }
+
+    if (message == "") {
+        alert("Please enter a message");
+        return;
+    }
+
+    let msg = new Paho.MQTT.Message(message);
+    msg.destinationName = topic;
+    client.send(msg);
+    console.log(`Published message: ${message} to topic: ${topic}`);
+}
+
+async function FetchData(url) {
+    try {
+        const response = await fetch(url, { method: 'GET' });
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Error fetching client data:', error);
+        throw error;
+    }
+}
+</script>
+</html>

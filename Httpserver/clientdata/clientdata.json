@@ -1,16 +1,8 @@
 [
   {
-    "id": "Ardunio33",
-    "state": "True",
-    "time": "6/18/2024, 3:16:06 PM",
-    "name": "Alice",
-    "age": 21
-  },
-  {
-    "id": "Ardunio",
+    "id": "WebMQTTclient",
     "state": "False",
-    "time": "6/15/2024, 2:04:15 AM",
-    "name": "Ali",
-    "age": 42
+    "time": "7/5/2024, 4:20:15 PM",
+    "disconnectTime": "7/5/2024, 4:20:15 PM"
   }
 ]
