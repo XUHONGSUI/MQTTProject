@@ -1,0 +1,35 @@
+{
+    "digitalPins": {
+        "D0": {
+            "value": 0
+        },
+        "D1": {
+            "value": 0
+        },
+        "D2": {
+            "value": 0
+        },
+        "D3": {
+            "value": 0
+        },
+        "D4": {
+            "value": 0
+        },
+        "D5": {
+            "value": 0
+        },
+        "D6": {
+            "value": 0
+        },
+        "D7": {
+            "value": 0
+        },
+        "D8": {
+            "value": 0
+        },
+        "D9": {
+            "value": 0
+        }
+    },
+    "clientID": "6C:35:B9:AB:62:24"
+}

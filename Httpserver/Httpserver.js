@@ -95,7 +95,7 @@ app.post('/virtualpublish', async(req,res)=>{
 });
 
 
-app.post('/clientstateupdate', (req, res) => {
+app.post('/clientstateupdate', async (req, res) => {
     let currentDate = new Date();
     const clientID = req.body.id;
     fs.readFile(clientPath, (err, data) => {

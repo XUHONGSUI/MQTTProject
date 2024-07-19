@@ -1,117 +1,27 @@
 [
   {
-    "topic": "ABC",
+    "topic": "pins/values",
     "type": "unsubscribe",
-    "id": "Arduino"
+    "id": "PinsClient"
   },
   {
-    "topic": "ABC",
-    "type": "publish",
-    "id": "Ardunio33"
-  },
-  {
-    "topic": "ABC",
-    "type": "unsubscribe",
-    "id": "ABC"
-  },
-  {
-    "topic": "UUU",
-    "type": "subscribe",
-    "id": "Ardunio33"
-  },
-  {
-    "topic": "UUUU",
-    "type": "subscribe",
-    "id": "Ardunio33"
-  },
-  {
-    "topic": "UUUU",
-    "type": "publish",
-    "id": "Arduino"
-  },
-  {
-    "topic": "AAA",
-    "type": "publish",
-    "id": "Arduino"
-  },
-  {
-    "topic": "AAA",
-    "type": "subscribe",
-    "id": "Ardunio33"
-  },
-  {
-    "topic": "test/topic",
-    "type": "publish",
-    "id": "ABC"
-  },
-  {
-    "topic": "test/topic",
-    "type": "subscribe",
-    "id": "Ardunio33"
-  },
-  {
-    "topic": "test/topic",
-    "type": "unsubscribe",
-    "id": "WebMQTTclient"
-  },
-  {
-    "topic": "test/topic",
-    "type": "publish",
-    "id": "Ardunio33"
-  },
-  {
-    "topic": "ABC",
-    "type": "unsubscribe",
-    "id": "WebMQTTclient"
-  },
-  {
-    "topic": "UUUU",
-    "type": "publish",
-    "id": "WebMQTTclient"
-  },
-  {
-    "topic": "state/info",
-    "type": "unsubscribe",
-    "id": "WebMQTTclient"
-  },
-  {
-    "topic": "state/info",
-    "type": "publish",
-    "id": "Ardunio33"
-  },
-  {
-    "topic": "UUUU",
-    "type": "subscribe",
-    "id": "Ardunio"
-  },
-  {
-    "topic": "UUUU",
-    "type": "publish",
-    "id": "WebMQTTclient78"
-  },
-  {
-    "topic": "state/info",
+    "topic": "pins/values",
     "type": "publish",
     "id": "Ardunio"
   },
   {
-    "topic": "UUUU",
-    "type": "unsubscribe",
-    "id": "WebMQTTclient"
-  },
-  {
-    "topic": "UUUU",
+    "topic": "pins/values",
     "type": "publish",
-    "id": "Ardunio"
+    "id": "Ardunio33"
   },
   {
-    "topic": "ABC",
-    "type": "subscribe",
-    "id": "Ardunio"
-  },
-  {
-    "topic": "ABC",
+    "topic": "pins/values",
     "type": "publish",
-    "id": "Ardunio"
+    "id": "6C:35:B9:AB:62:24"
+  },
+  {
+    "topic": "pins/values",
+    "type": "publish",
+    "id": "88:35:B9:AB:62:25"
   }
 ]

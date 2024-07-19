@@ -1,83 +1,134 @@
-html, body{
-    height: 500px;
-    width: 600px;
-    padding: 0;
-    margin: 0;
-    background-color: rgb(126, 203, 132);
-  }
+html,body {
+            height: 100%;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            background-color: rgb(126, 203, 132);;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            align-items: center;
+        }
 
-#MQTTclient{
-    text-align: center;
-}
+        #MQTTclient {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 24px;
+            color: #333;
+        }
 
-#clientID{
-    width: 100px;
-    border-radius: 5%; 
-}
+        .container {
+            display: flex;
+            width: 80%;
+            max-width: 1200px;
+            height: 500px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
 
-#MQTTserver{
-    background-color: aqua;
-    margin-bottom: 0px;
-}
+        #MQTTserver,
+        .mqttclientcontainer {
+            flex: 1;
+            padding: 20px;
+        }
 
-#client{
-    background-color: blueviolet;
-    width: 100%;
-    height: 100%;
-}
+        #MQTTserver {
+            border-right: 1px solid #ccc;
+        }
 
-#publishmeaasge{
-    width: 395px;
-    height: 272px;
-    resize: none;
-}
+        #clientID,
+        #host,
+        #port,
+        #status,
+        #topic,
+        #Subtopic,
+        #keepAliveTime,
+        #ConnetionTimeout {
+            width: calc(100% - 20px);
+            padding: 5px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
 
-#topic{
-    width: 200px;
-}
+        #publishmeaasge,
+        #subscribetopics {
+            width: calc(100% - 20px);
+            height: 150px;
+            resize: none;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+            padding: 5px;
+            margin: 10px 0;
+        }
 
-#mySelect {
-width: 50px; 
-}
+        #connect,#disconnect,#publishbutton,#subscribebutton,#unsubscribebutton {
+            padding: 10px 20px;
+            margin: 10px 5px;
+            border: none;
+            border-radius: 4px;
+            font-size: 14px;
+            cursor: pointer;
+        }
 
-#mySelect option {
-width: 50px; 
-}
+        #connect {background-color: #008000;}
+        #disconnect {background-color: #f44336;}
+        #publishbutton {background-color: #2196F3;}
+        #subscribebutton {background-color: #FF9800;}
+        #unsubscribebutton {background-color: #795548;}
 
-.background{
-    background-color: yellow;
- }
+        .mqttclientcontainer .header {
+            display: flex;
+            justify-content: space-around;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
 
- .mqttclientbody{
-    height: 400px;
-    width: 400px;
-    border: 1px solid black;
- }
+        .mqttclientcontainer .header span {
+            cursor: pointer;
+            font-size: 18px;
+            padding: 5px 10px;
+        }
 
- .mqttclientbody div{
-    height: 300px;
-    width: 400px;
-    /* border:1px solid black; */
-    display: none;
-    font-size: 15px;
- }
+        .mqttclientcontainer .header span.background {
+            background-color: #ffeb3b;
+        }
 
- div.show{
-    display: block;
- }
+        .mqttclientbody {
+            display: flex;
+            flex-direction: column;
+            height: 380px;
+            max-height: 100%;
+            overflow-y: auto;
+        }
 
-.show input{
-    flex: 1;
-    width: 60px;
-    align-items: center;
- }
- .colon-aligned{   
-     margin-left:41px;
-  }
-.colon-aligned-clientID{
-    margin-left: 90px;
-}
+        #clientsettings, #publish, #subscribe,#IOs { 
+            flex: 1;
+            display: none;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
 
-.mqttclientbody{
-    height: 300px;
-}
+        /* .mqttclientbody div.show {
+            display: block;
+        } */
+
+        label {
+            display: block;
+            margin: 5px 0;
+            font-weight: bold;
+        }
+
+        #middle{
+            width: calc(100% - 80px);
+            background-color: #008000;
+        }

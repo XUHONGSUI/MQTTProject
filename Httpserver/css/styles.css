@@ -42,3 +42,20 @@ h4{
     background-color: rgb(225, 236, 236);
     left: 0;
 }
+
+#MQTTArea{
+    width: 100%;
+    height: 600px; 
+    background-color: rgb(225, 236, 236);
+    left: 0;
+}
+
+#IOs { 
+    width: 200px;
+    height: 200px;
+    display: block;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
