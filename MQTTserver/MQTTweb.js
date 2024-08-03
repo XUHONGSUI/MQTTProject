@@ -3,23 +3,35 @@ const http = require('http');
 const ws = require('ws');
 const net = require('net');
 const websocketStream = require('websocket-stream');
+const sqlite3 = require('sqlite3').verbose();
 
 const mqttPort = 1883;
 const wsPort = 8080;
-
 // Create an MQTT server
 const mqttServer = net.createServer(aedes.handle);
-
 // Create an HTTP server
 const httpServer = http.createServer();
-
 // Create a WebSocket server
 const wsServer = new ws.Server({ server: httpServer });
+let db = new sqlite3.Database('./database/MQTTDB');
 
 wsServer.on('connection', (socket) => {
   const stream = websocketStream(socket);
   aedes.handle(stream);
 });
+
+let sql ='select *from clientdata';
+db.all(sql, [], (err, data) => {
+  if (err) {
+    throw err;
+  }
+  
+  data.forEach(device => {
+    console.log(device.ID);
+  });
+});
+// close the database connection
+db.close();
 
 // Start the MQTT server
 mqttServer.listen(mqttPort, () => {

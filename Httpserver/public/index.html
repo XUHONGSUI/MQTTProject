@@ -69,6 +69,8 @@
 
             <div id="MQTTArea"></div>
 
+            <div id="ClientArea"></div>
+
 
             <diV id="MQTTclient" style="display: none;">
                 <div id="clientID" style="width: 350px; display: flex; font-size: 12px;"><span
@@ -145,9 +147,12 @@
     </div>
 </body>
 <script src="../script/mqtt.min.js"></script>
+<script src="/socket.io/socket.io.js"></script>
 <script>
 
     let clientdatall = [];
+    let showpin = false;
+    // const socket = io('http://localhost:3000');
 
     //Get Devices from server
     async function GetDevices() {
@@ -160,6 +165,8 @@
             TableCreate(clientdata);
         }
         GetclientNumber();
+        showpin = false;
+
 
     }
 
@@ -168,6 +175,7 @@
         InitDiv();
         document.getElementById('dataArea').style.display = 'none';
         document.getElementById('MQTTArea').style.display = 'block';
+        showpin = false;
 
     }
 
@@ -180,6 +188,7 @@
         if (clientdata != null) {
             TableCreate(clientdata);
         }
+        showpin = false;
     }
     // Get Client Number
     async function GetclientNumber() {
@@ -197,8 +206,12 @@
 
     function GetClients() {
         event.preventDefault();
-        InitDiv();
-        document.getElementById('dataArea').innerHTML = '';
+        const root = document.getElementById('dataArea');
+        root.innerHTML = '';
+        const rootMQTT = document.getElementById('MQTTArea');
+        rootMQTT.style.display = 'none';
+        showpin = true;
+
     }
 
     function TableCreate(data) {
@@ -241,6 +254,9 @@
         root.innerHTML = '';
         const rootMQTT = document.getElementById('MQTTArea');
         rootMQTT.style.display = 'none';
+        const client = document.getElementById('ClientArea');
+        client.innerHTML = '';
+        client.style.display = 'none';
 
     }
 
@@ -265,10 +281,7 @@
 
 
     window.onload = async function () {
-
-        let urlstate = 'http://localhost:3000/clientdata';
-        let clientstate = await FetchData(urlstate);
-        console.log(clientstate);
+        //console.log(clientstate);
 
         const root = document.getElementById('MQTTArea');
         root.innerHTML = '<iframe src="../public/mqtt.html" id="mqttclienthtml" style="width: 100%; height: 100%; border: none;"></iframe>';
@@ -282,12 +295,12 @@
         let url = 'ws://' + 'localhost' + ':' + 8080;
         client = mqtt.connect(url, options);
         client.on('connect', () => {
-            client.subscribe('pins/values');
+            client.subscribe('pins/value');
         });
 
         let clientjson = JSON.parse(clientdata);
 
-        client.on('message', (topic, message) => {
+        client.on('message', async (topic, message) => {
             let jsondata = JSON.parse(message);
 
             if (clientjson.length == 0) {
@@ -298,11 +311,16 @@
                 if (newclientsjon.length == 0) {
                     clientjson.push(jsondata);
                 } else {
+                    let urlstate = 'http://localhost:3000/clientdata';
+                    let clientstate = await FetchData(urlstate);
+
                     clientstate.forEach(item => {
                         if (item.state === "False") {
                             clientjson = clientjson.filter(obj => obj.clientID !== item.id);
                         }
                     });
+
+
 
                     clientjson = clientjson.map((obj) => {
                         if (obj.clientID === jsondata.clientID) {
@@ -319,9 +337,48 @@
             clientdatall = JSON.stringify(clientjson);
             let clientdatallorg;
             clientdatallorg = JSON.parse(clientdatall);
-            document.getElementById('dataArea').innerHTML = '';
-            showPins(clientdatallorg);
+            //remove the previous showing data
+            document.getElementById('ClientArea').innerHTML = '';
+            //prevent the main area occupied by the panel
+            if (showpin) {
+                showPins(clientdatallorg);
+                clientdatallorg = [];
+            }
+
         });
+
+        const socket = io('http://localhost:3000');
+        // Handle incoming client data updates
+        socket.on('updateClientData', (clientData) => {
+            clientdatajson =JSON.parse(clientData);
+            clientdatajson.forEach(item => {
+                if (item.state === 'False') {
+                    clientjson = clientjson.filter(obj => obj.clientID !== item.id);
+                }
+            });
+
+            if (clientjson.length === 0) {
+                document.getElementById('ClientArea').innerHTML = '';
+            }
+        });
+   
+        // if (showpin) {
+        //     setInterval(async () => {
+        //         let urlstate = 'http://localhost:3000/clientdata';
+        //         let clientstate = await FetchData(urlstate);
+
+        //         clientstate.forEach(item => {
+        //             if (item.state === "False") {
+        //                 clientjson = clientjson.filter(obj => obj.clientID !== item.id);
+        //             }
+        //         });
+
+        //         if (clientjson.length == 0) {
+        //             document.getElementById('ClientArea').innerHTML = '';
+        //         }
+        //         console.log("True");
+        //     }, 1000);
+        // }
 
         client.on('error', (error) => {
             client.end();
@@ -337,7 +394,7 @@
 
 
     }
-
+    //css and data show function
     function displayArduinoModel() {
 
         document.getElementById('left').style.display = 'block';
@@ -376,7 +433,7 @@
             pins1[i].style.cursor = 'pointer';
             pins1[i].style.fontSize = '10px';
 
-
+            //load data to panel
             pins1values[i].style.width = '100%';
             pins1values[i].style.height = '8%';
             pins1values[i].style.marginBottom = '3px';
@@ -400,7 +457,7 @@
             pins2[i].style.fontSize = '10px';
 
 
-
+            //load data to panel
             pins2values[i].style.width = '100%';
             pins2values[i].style.height = '8%';
             pins2values[i].style.marginBottom = '3px';
@@ -411,18 +468,22 @@
         }
 
     }
-
+    //generate a panel to show pins value
     function showPins(clientdatall) {
-        let digitalPins,digitalPinsValues,root,mattweb,mqttClientTemplate,newMQTTClient;
+        let digitalPins, digitalPinsValues, root, mattweb, mqttClientTemplate, newMQTTClient, clientarea;
 
         for (let i = 0; i < clientdatall.length; i++) {
 
             root = document.getElementById('dataArea');
-            root.style.display = 'block';
+            root.style.display = 'none';
             mattweb = document.getElementById('MQTTArea');
             mattweb.style.display = 'none';
+            clientarea = document.getElementById('ClientArea');
+            clientarea.style.display = 'block';
+
             mqttClientTemplate = document.getElementById('MQTTclient');
             newMQTTClient = mqttClientTemplate.cloneNode(true);
+            //
             newMQTTClient.querySelector('#clientName').textContent = clientdatall[i].clientID;
             digitalPins = clientdatall[i].digitalPins;
             digitalPinsValues = Object.values(digitalPins).map(pin => pin.value);
@@ -433,10 +494,10 @@
 
             newMQTTClient.style.display = 'block';
             newMQTTClient.style.margin = '10px';
-            root.style.display = 'flex';
-            root.style.flexWrap = 'wrap';
-            root.style.overflow = 'scroll';
-            root.appendChild(newMQTTClient);
+            clientarea.style.display = 'flex';
+            clientarea.style.flexWrap = 'wrap';
+            clientarea.style.overflow = 'scroll';
+            clientarea.appendChild(newMQTTClient);
             displayArduinoModel();
         }
 
@@ -449,6 +510,7 @@
         client.end();
         console.log('Connection closed');
         return;
+        showpin = false;
     }
 
 

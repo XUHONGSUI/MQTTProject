@@ -1,38 +1,20 @@
 [
   {
-    "id": "PinsClient",
-    "state": "False",
-    "time": "7/19/2024, 8:10:31 PM",
-    "disconnectTime": "7/19/2024, 8:10:31 PM"
-  },
-  {
-    "id": "Ardunio",
-    "state": "False",
-    "time": "7/16/2024, 12:45:07 PM",
-    "disconnectTime": "7/19/2024, 8:10:31 PM"
-  },
-  {
-    "id": "WebMQTTclient",
-    "state": "False",
-    "time": "7/16/2024, 12:45:07 PM",
-    "disconnectTime": "7/19/2024, 8:10:31 PM"
-  },
-  {
-    "id": "Ardunio33",
-    "state": "False",
-    "time": "7/16/2024, 12:45:07 PM",
-    "disconnectTime": "7/19/2024, 8:10:31 PM"
-  },
-  {
     "id": "6C:35:B9:AB:62:24",
     "state": "False",
-    "time": "7/18/2024, 10:41:13 AM",
-    "disconnectTime": "7/19/2024, 8:10:31 PM"
+    "time": "7/25/2024, 1:07:58 AM",
+    "disconnectTime": "7/25/2024, 1:07:58 AM"
+  },
+  {
+    "id": "PinsClient",
+    "state": "False",
+    "time": "7/23/2024, 4:14:17 PM",
+    "disconnectTime": "7/25/2024, 1:07:58 AM"
   },
   {
     "id": "88:35:B9:AB:62:25",
-    "state": "True",
-    "time": "7/19/2024, 8:10:31 PM",
-    "disconnectTime": "7/19/2024, 8:10:31 PM"
+    "state": "False",
+    "time": "7/25/2024, 1:07:58 AM",
+    "disconnectTime": "7/25/2024, 1:07:58 AM"
   }
 ]

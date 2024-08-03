@@ -23,5 +23,40 @@
     "topic": "pins/values",
     "type": "publish",
     "id": "88:35:B9:AB:62:25"
+  },
+  {
+    "topic": "pins/value",
+    "type": "publish",
+    "id": "6C:35:B9:AB:62:24"
+  },
+  {
+    "topic": "pins/value",
+    "type": "unsubscribe",
+    "id": "PinsClient"
+  },
+  {
+    "topic": "pins/value",
+    "type": "publish",
+    "id": "88:35:B9:AB:62:25"
+  },
+  {
+    "topic": "UUUU",
+    "type": "publish",
+    "id": "6C:35:B9:AB:62:24"
+  },
+  {
+    "topic": "IOs",
+    "type": "publish",
+    "id": "6C:35:B9:AB:62:24"
+  },
+  {
+    "topic": "z",
+    "type": "publish",
+    "id": "88:35:B9:AB:62:25"
+  },
+  {
+    "topic": "ABC1",
+    "type": "publish",
+    "id": "6C:35:B9:AB:62:24"
   }
 ]

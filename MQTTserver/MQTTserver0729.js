@@ -25,7 +25,7 @@ const DailyRotateFile = require('winston-daily-rotate-file');
 const websocketStream = require('websocket-stream');
 const { release } = require("os");
 const sqlite3 = require('sqlite3').verbose();
-let db = new sqlite3.Database('./database/MQTTDB');
+
 //log recorder create
 const logFormat = printf(({ timestamp, level, message }) => {
   return `${timestamp} ${level}: ${message}`;
@@ -177,42 +177,27 @@ aedes.on("unsubscribe", (subscriptions, client) => {
 });
 
 aedes.on("publish", (packet, client) => {
+
   if (client) {
-      //db.run("BEGIN TRANSACTION");
-      db.all("SELECT * FROM topics WHERE id = ? AND topic = ?", [client.id, packet.topic], (err, topic) => {
-        if (err) {
-          console.error(err.message);
-          //db.run("ROLLBACK");
-          return;
-        }
-        if (topic.length === 0) {
-          db.run("INSERT INTO topics (id, topic, type) VALUES (?, ?, ?)", [client.id, packet.topic, "publish"], (err)=>{
-            if (err) {
-              console.error(err.message);
-              //db.run("ROLLBACK");
-            } else {
-              console.log(`Record inserted with ID ${this.lastID}`);
-              //db.run("COMMIT");
-            }
-          });
-        } else {
-          let shouldInsert = topic.some(row => row.type !== "subscribe" && row.type !== "unsubscribe");
-  
-          if (!shouldInsert) {
-            db.run("UPDATE topics SET type = ? WHERE id = ? AND topic = ?", ["publish", client.id, packet.topic], (err)=>{
-              if (err) {
-                console.error(err.message);
-                //db.run("ROLLBACK");
-              } else {
-                console.log(`Record updated with ID ${this.changes}`);
-                //db.run("COMMIT");
-              }
-            });
-          } else {
-            //db.run("COMMIT");
-          }
-        }
-      });
+    fs.readFile(pathtree,(err,data)=>{
+      if(err){
+       console.log(err)};
+       if (data.length==0) {
+          data ="[]";
+      }
+      let jsonDataTopic;
+      jsonDataTopic =JSON.parse(data);
+       if(jsonDataTopic.length == 0){
+         jsonDataTopic.push({topic:packet.topic,type:"publish",id:client.id});
+         setTimeout(()=>{wirteTopicTree(jsonDataTopic);},100);  
+       }else{
+         let topic = jsonDataTopic.find((obj) =>  obj.id === client.id && (obj.type !== "subscribe" && obj.type !== "unsubscribe") && obj.topic === packet.topic);
+         if(!topic){
+           jsonDataTopic.push({topic:packet.topic,type:"publish",id:client.id});
+           setTimeout(()=>{wirteTopicTree(jsonDataTopic);},100);  
+         }
+       }
+   })
 
 
   if(packet.topic=="state/info"){
@@ -223,15 +208,25 @@ aedes.on("publish", (packet, client) => {
        return;
     }
     let InfoJsonObject = JSON.parse(InfoDetail);
-    db.run("UPDATE clientdata SET Address = ?,Topic=?,KeepAlivetime=?  WHERE id = ?", [InfoJsonObject.Address,InfoJsonObject.Topic,KeepAlivetime ,client.id], (err)=>{
-              if (err) {
-                console.error(err.message);
-                //db.run("ROLLBACK");
-              } else {
-                console.log(`Record updated with ID ${this.changes}`);
-                //db.run("COMMIT");
-              }
-            });
+
+    fs.readFile(path,(err,data)=>{
+      
+      if(err){console.log(err)};
+      if(data.length==0){
+        data ="[]";
+      }
+      let InfoJson;
+      InfoJson =JSON.parse(data);
+      let info = InfoJson.find((obj) => obj.id === client.id);
+      let Newinfo = { ...info, ...InfoJsonObject };
+      InfoJson = InfoJson.map((item) => {
+        if (item.id === client.id) {
+          return Newinfo;
+        }
+        return item;
+      });
+      setTimeout(()=>{writeClient(InfoJson);},100);
+    })
    }
 
    if(packet.topic=="state/info"){

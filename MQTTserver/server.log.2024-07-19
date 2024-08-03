@@ -1,7 +1,0 @@
-2024-07-19 20:10:31 info: WebSocket server started on port 8080
-2024-07-19 20:10:31 info: server running and listening on port 1883
-2024-07-19 20:10:36 info: Client Connected: PinsClient
-2024-07-19 20:10:36 info: Client PinsClient subscribed to topics: pins/values
-2024-07-19 20:10:58 info: Client Connected: 88:35:B9:AB:62:25
-2024-07-19 20:14:04 info: Client Disconnected: PinsClient
-2024-07-19 20:14:04 info: Client PinsClient unsubscribed to topics: pins/values
