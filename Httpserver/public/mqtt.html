@@ -262,8 +262,10 @@
         });
 
         client.on('message', (topic, message) => {
-            const content = document.getElementById('subscribetopics');
-            content.textContent = content.textContent + `Topic: ${topic} - Message: ${message.toString()}` + "\n";
+            console.log(message.toString());
+            let content = document.getElementById('subscribetopics');
+            content.value = content.value + `Topic: ${topic} - Message: ${message.toString()}` + "\n";
+            
         });
 
         client.on('close', () => {
@@ -321,7 +323,9 @@
         postData(urlpublish, data);
 
         let urlPublish = 'http://localhost:3000/getpublish';
-        let publishtopics = FetchData(urlPublish);
+        let publishtopics = setTimeout(()=>{
+            FetchData(urlPublish);
+        },200);
         document.getElementById('mySelect').innerHTML = "";
 
         publishtopics.then((data) => {

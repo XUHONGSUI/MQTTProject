@@ -60,6 +60,13 @@ console.log = function (message) {
 // Create a WebSocket server
 const wsServer = new ws.Server({ server: httpServer });
 
+db.run("PRAGMA journal_mode = WAL;", (err) => {
+  if (err) {
+      return console.error(err.message);
+  }
+  console.log('WAL mode enabled.');
+});
+
 wsServer.on("connection", (socket) => {
   const stream = websocketStream(socket);
   aedes.handle(stream);
@@ -75,7 +82,7 @@ server.listen(port, () => {
   db.run("UPDATE clientdata SET State = ? WHERE 1=1", ["False"], (err) => {
     if (err) {
       console.error(err.message);
-      //db.run("ROLLBACK");
+      db.run("ROLLBACK");
       return;
     }
   });
@@ -84,7 +91,7 @@ server.listen(port, () => {
 aedes.on("clientDisconnect", (client) => {
   db.run(
     "UPDATE clientdata SET State = ?,DisconnectTime =? WHERE ID = ? ",
-    ["False", currentDate.toLocaleString("en-US"), client.id],
+    ["True", currentDate.toLocaleString("en-US"), client.id],
     (err) => {
       if (err) {
         console.error(err.message);
@@ -99,7 +106,7 @@ aedes.on("clientDisconnect", (client) => {
 });
 //client MQTT server
 aedes.on("client", (client) => {
-  db.all("SELECT * FROM clientdata WHERE ID = ?", [client.id], (err, data) => {
+  db.all("SELECT * FROM clientdata WHERE id = ?", [client.id], (err, data) => {
     if (err) {
       console.error(err.message);
       //db.run("ROLLBACK");
@@ -120,9 +127,11 @@ aedes.on("client", (client) => {
         }
       );
     } else {
+      let Device = data.find((obj) => obj.id === client.id);
+      if (!Device) {
         db.run(
-          "UPDATE clientdata SET State = ?,ConnectTime = ? WHERE ID = ? ",
-          ["True", currentDate.toLocaleString("en-US"), client.id],
+          "INSERT INTO clientdata (ID,State,ConnectTime) values(?,?,?)",
+          [client.id, "True", currentDate.toLocaleString("en-US")],
           (err) => {
             if (err) {
               console.error(err.message);
@@ -133,6 +142,21 @@ aedes.on("client", (client) => {
             }
           }
         );
+      } else {
+        db.run(
+          "UPDATE clientdata SET State = ?,ConnectTime = ? WHERE ID = ? ",
+          ["True", currentDate.toLocaleString("en-US"), client.id],
+          (err) => {
+            if (err) {
+              console.error(err.message);
+              db.run("ROLLBACK");
+            } else {
+              console.log(`Record insert clientdata with ID ${this.changes}`);
+              //db.run("COMMIT");
+            }
+          }
+        );
+      }
     }
   });
   console.log(`Client Connected: ${client.id}`);
@@ -156,7 +180,6 @@ aedes.on("unsubscribe", (subscriptions, client) => {
 
 aedes.on("publish", (packet, client) => {
   if (client) {
-    //db.run("BEGIN TRANSACTION");
     db.all(
       "SELECT * FROM topics WHERE id = ? AND topic = ?",
       [client.id, packet.topic],
@@ -173,10 +196,10 @@ aedes.on("publish", (packet, client) => {
             (err) => {
               if (err) {
                 console.error(err.message);
-                //db.run("ROLLBACK");
+                db.run("ROLLBACK");
               } else {
                 console.log(`Record topics inserted with ID ${this.lastID}`);
-                //db.run("COMMIT");
+                db.run("COMMIT");
               }
             }
           );
@@ -189,15 +212,15 @@ aedes.on("publish", (packet, client) => {
               (err) => {
                 if (err) {
                   console.error(err.message);
-                  //db.run("ROLLBACK");
+                  db.run("ROLLBACK");
                 } else {
                   console.log(`Record updated with ID ${this.changes}`);
-                  //db.run("COMMIT");
+                  db.run("COMMIT");
                 }
               }
             );
           } else {
-            //db.run("COMMIT");
+            db.run("COMMIT");
           }
         }
       }
@@ -214,10 +237,10 @@ aedes.on("publish", (packet, client) => {
         (err) => {
           if (err) {
             console.error(err.message);
-            //db.run("ROLLBACK");
+            db.run("ROLLBACK");
           } else {
             console.log(`Record updated with ID ${this.changes}`);
-            //db.run("COMMIT");
+            db.run("COMMIT");
           }
         }
       );
@@ -236,46 +259,65 @@ aedes.on("publish", (packet, client) => {
 });
 
 function RecordTreeTopic(subscriptions, client, typedifne) {
-  if (typedifne == "subscribe") {
-    topicselect= subscriptions.map((s) => s.topic).join(", ");
-    db.all("SELECT * FROM topics WHERE id = ? AND topic = ?",[client.id, topicselect],(err, data) => {
-      if(err){
-        console.log(err.message);
+  db.all(
+    "SELECT * FROM topics WHERE id = ? AND topic = ?",
+    [client.id, packet.topic],
+    (err, data) => {
+      if (err) {
+        console.error(err.message);
+        //db.run("ROLLBACK");
+        return;
       }
-      if (data.length === 0) {
-        db.run("INSERT INTO topics (id, topic, type) VALUES (?, ?, ?)",[client.id, topicselect, typedifne],(err) => {
-            if (err) {
-              console.log(err.message);
-              //db.run("ROLLBACK");
-            } else {
-              console.log(`Record topics subscribe inserted with ID ${client.id}`);
-              //db.run("COMMIT");
+      if (typedifne == "subscribe") {
+        topicselect= subscriptions.map((s) => s.topic).join(", ");
+        if (data === 0) {
+          db.run("INSERT INTO topics (id, topic, type) VALUES (?, ?, ?)",[client.id, packet.topic, typedifne],(err) => {
+              if (err) {
+                console.log(err.message);
+                //db.run("ROLLBACK");
+              } else {
+                console.log(`Record topics subscribe inserted with ID ${this.lastID}`);
+                //db.run("COMMIT");
+              }
             }
-          }
-        );
-      }else{
-          db.run("UPDATE topics SET type=? WHERE ID=? AND topic=? AND type=?",[typedifne,client.id,topicselect,"unsubscribe"],(err)=>{
-            if(err){
-              console.log(err.message);
-            }
-          });
-      }
-    });
-  }else if(typedifne=="unsubscribe"){
-    topicselect = subscriptions.join(", ");
-    let unscribetopics= topicselect.split(',').map(topic => topic.trim());
-    unscribetopics.forEach(element => {
-         db.run("UPDATE topics SET type=? WHERE ID=? AND topic=? AND type=?",[typedifne,client.id,element,"subscribe"],(err)=>{
-          if(err){
-            console.log(err.message);
+          );
+        }else{
+          let topic = data.find((obj) => obj.id === client.id &&  obj.topic === topicselect && obj.type !=="publish");
+          if(!topic){
+             db.run("INSERT INTO topics (id, topic, type) VALUES (?, ?, ?)",[client.id,topicselect,typedifne],(err)=>{
+              if(err){
+                console.log(err.message);
+              }
+             });
           }else{
-            console.log();
+            db.run("UPDATE topics SET type=? WHERE ID=? AND topic=?",[typedifne,client.id,topicselect],(err)=>{
+              if(err){
+                console.log(err.message);
+              }
+            });
           }
-         });
-    });
-  }
+        }
+      }else if(typedifne=="unsubscribe"){
+        topicselect = subscriptions.join(", ");
+        let unscribetopics= topicselect.split(',').map(topic => topic.trim());
+        unscribetopics.forEach(element => {
+             db.run("UPDATE topics SET type=? WHERE ID=? AND topic=?",[typedifne,client.id,element],(err)=>{
+              if(err){
+                console.log(err.message);
+              }
+             });
+        });
+      }
+    }
+  );
 }
 
 server.on("start", () => {
   console.log("Aedes MQTT server closed");
 });
+
+//datasend
+// setInterval(() => {
+//   socket.emit('client Data',jsonStringDevice);
+//   socket.emit('client topics',jsonStringTopic);
+// },200);

@@ -58,5 +58,10 @@
     "topic": "ABC1",
     "type": "publish",
     "id": "6C:35:B9:AB:62:24"
+  },
+  {
+    "topic": "UUUU",
+    "type": "unsubscribe",
+    "id": "WebMQTTclient"
   }
 ]
