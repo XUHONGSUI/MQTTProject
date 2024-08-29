@@ -161,6 +161,15 @@ function ReadData(Path) {
   });
 }
 
+setInterval(() => {
+    db.run("SELECT * FROM clientdata",[""],(err,data)=>{
+       if(err){
+        console.log("io query error!!");
+       }
+       io.emit('updateClientData',data);
+    });
+}, 1000);
+
 //receive message from MQTT server
 server.listen(port, () => {
   console.log(`Server is running on port 3000 ${port}`);

@@ -196,10 +196,10 @@ aedes.on("publish", (packet, client) => {
             (err) => {
               if (err) {
                 console.error(err.message);
-                db.run("ROLLBACK");
+                //db.run("ROLLBACK");
               } else {
                 console.log(`Record topics inserted with ID ${this.lastID}`);
-                db.run("COMMIT");
+                //db.run("COMMIT");
               }
             }
           );
@@ -212,15 +212,15 @@ aedes.on("publish", (packet, client) => {
               (err) => {
                 if (err) {
                   console.error(err.message);
-                  db.run("ROLLBACK");
+                  //db.run("ROLLBACK");
                 } else {
                   console.log(`Record updated with ID ${this.changes}`);
-                  db.run("COMMIT");
+                  //db.run("COMMIT");
                 }
               }
             );
           } else {
-            db.run("COMMIT");
+            //db.run("COMMIT");
           }
         }
       }
@@ -237,10 +237,10 @@ aedes.on("publish", (packet, client) => {
         (err) => {
           if (err) {
             console.error(err.message);
-            db.run("ROLLBACK");
+            //db.run("ROLLBACK");
           } else {
             console.log(`Record updated with ID ${this.changes}`);
-            db.run("COMMIT");
+            //db.run("COMMIT");
           }
         }
       );
@@ -316,8 +316,3 @@ server.on("start", () => {
   console.log("Aedes MQTT server closed");
 });
 
-//datasend
-// setInterval(() => {
-//   socket.emit('client Data',jsonStringDevice);
-//   socket.emit('client topics',jsonStringTopic);
-// },200);
