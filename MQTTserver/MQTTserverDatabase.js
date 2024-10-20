@@ -12,8 +12,8 @@ const currentDate = new Date();
 //fs
 const fs = require("fs");
 const io = require("socket.io-client");
-const socket = io("http://localhost:3000");
-const path = "./data/clientdata.json";
+// const socket = io("http://localhost:3000");
+// const path = "./data/clientdata.json";
 //topicstree
 const pathtree = "./data/topicstreetest.json";
 const winston = require("winston");
@@ -59,13 +59,12 @@ console.log = function (message) {
 };
 // Create a WebSocket server
 const wsServer = new ws.Server({ server: httpServer });
-
-db.run("PRAGMA journal_mode = WAL;", (err) => {
-  if (err) {
-      return console.error(err.message);
-  }
-  console.log('WAL mode enabled.');
-});
+// db.run("PRAGMA journal_mode = WAL;", (err) => {
+//   if (err) {
+//     return console.error(err.message);
+//   }
+//   console.log('WAL mode enabled.');
+// });
 
 wsServer.on("connection", (socket) => {
   const stream = websocketStream(socket);
@@ -82,7 +81,7 @@ server.listen(port, () => {
   db.run("UPDATE clientdata SET State = ? WHERE 1=1", ["False"], (err) => {
     if (err) {
       console.error(err.message);
-      db.run("ROLLBACK");
+      // db.run("ROLLBACK");
       return;
     }
   });
@@ -91,7 +90,7 @@ server.listen(port, () => {
 aedes.on("clientDisconnect", (client) => {
   db.run(
     "UPDATE clientdata SET State = ?,DisconnectTime =? WHERE ID = ? ",
-    ["True", currentDate.toLocaleString("en-US"), client.id],
+    ["False", currentDate.toLocaleString("en-US"), client.id],
     (err) => {
       if (err) {
         console.error(err.message);
@@ -233,14 +232,12 @@ aedes.on("publish", (packet, client) => {
         return;
       }
       let InfoJsonObject = JSON.parse(InfoDetail);
-      db.run("UPDATE clientdata SET Address = ?,Topic=?,KeepAlivetime=?  WHERE id = ?",[InfoJsonObject.Address,InfoJsonObject.Topic,KeepAlivetime,client.id,],
+      db.run("UPDATE clientdata SET Address = ?,Topic=?,KeepAlivetime=?  WHERE id = ?", [InfoJsonObject.Address, InfoJsonObject.Topic, KeepAlivetime, client.id,],
         (err) => {
           if (err) {
             console.error(err.message);
-            //db.run("ROLLBACK");
           } else {
             console.log(`Record updated with ID ${this.changes}`);
-            //db.run("COMMIT");
           }
         }
       );
@@ -248,8 +245,7 @@ aedes.on("publish", (packet, client) => {
 
     if (packet.topic == "state/info") {
       console.log(
-        `Client ${client.id} published topic ${
-          packet.topic
+        `Client ${client.id} published topic ${packet.topic
         }: ${packet.payload.toString()}`
       );
     } else {
@@ -261,51 +257,48 @@ aedes.on("publish", (packet, client) => {
 function RecordTreeTopic(subscriptions, client, typedifne) {
   db.all(
     "SELECT * FROM topics WHERE id = ? AND topic = ?",
-    [client.id, packet.topic],
+    [client.id, subscriptions.topic],
     (err, data) => {
       if (err) {
         console.error(err.message);
-        //db.run("ROLLBACK");
         return;
       }
       if (typedifne == "subscribe") {
-        topicselect= subscriptions.map((s) => s.topic).join(", ");
+        topicselect = subscriptions.map((s) => s.topic).join(", ");
         if (data === 0) {
-          db.run("INSERT INTO topics (id, topic, type) VALUES (?, ?, ?)",[client.id, packet.topic, typedifne],(err) => {
+          db.run("INSERT INTO topics (id, topic, type) VALUES (?, ?, ?)", [client.id, subscriptions.topic, typedifne], (err) => {
+            if (err) {
+              console.log(err.message);
+            } else {
+              console.log(`Record topics subscribe inserted with ID ${this.lastID}`);
+            }
+          }
+          );
+        } else {
+          let topic = data.find((obj) => obj.id === client.id && obj.topic === topicselect && obj.type !== "publish");
+          if (!topic) {
+            db.run("INSERT INTO topics (id, topic, type) VALUES (?, ?, ?)", [client.id, topicselect, typedifne], (err) => {
               if (err) {
                 console.log(err.message);
-                //db.run("ROLLBACK");
-              } else {
-                console.log(`Record topics subscribe inserted with ID ${this.lastID}`);
-                //db.run("COMMIT");
               }
-            }
-          );
-        }else{
-          let topic = data.find((obj) => obj.id === client.id &&  obj.topic === topicselect && obj.type !=="publish");
-          if(!topic){
-             db.run("INSERT INTO topics (id, topic, type) VALUES (?, ?, ?)",[client.id,topicselect,typedifne],(err)=>{
-              if(err){
-                console.log(err.message);
-              }
-             });
-          }else{
-            db.run("UPDATE topics SET type=? WHERE ID=? AND topic=?",[typedifne,client.id,topicselect],(err)=>{
-              if(err){
+            });
+          } else {
+            db.run("UPDATE topics SET type=? WHERE ID=? AND topic=?", [typedifne, client.id, topicselect], (err) => {
+              if (err) {
                 console.log(err.message);
               }
             });
           }
         }
-      }else if(typedifne=="unsubscribe"){
+      } else if (typedifne == "unsubscribe") {
         topicselect = subscriptions.join(", ");
-        let unscribetopics= topicselect.split(',').map(topic => topic.trim());
+        let unscribetopics = topicselect.split(',').map(topic => topic.trim());
         unscribetopics.forEach(element => {
-             db.run("UPDATE topics SET type=? WHERE ID=? AND topic=?",[typedifne,client.id,element],(err)=>{
-              if(err){
-                console.log(err.message);
-              }
-             });
+          db.run("UPDATE topics SET type=? WHERE ID=? AND topic=?", [typedifne, client.id, element], (err) => {
+            if (err) {
+              console.log(err.message);
+            }
+          });
         });
       }
     }

@@ -11,7 +11,7 @@
             width: 100%;
             height: 100%;
             /* border: 1px solid #333; */
-            margin: 20px auto;
+            margin: 3px auto;
             font-family: Arial, sans-serif;
             border-collapse: collapse;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -20,7 +20,7 @@
         td,
         th {
             /* border: 1px solid #333; */
-            padding: 10px 15px;
+            /* padding: 3px 5px; */
             text-align: center;
             /* background-color: #f9f9f9; */
             color: #333;
@@ -93,7 +93,7 @@
             border: 1px solid #ddd;
             border-radius: 3px;
             height: 50px;
-            width: 280px;
+            width: 220px;
             transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
         }
 
@@ -106,13 +106,18 @@
         .custom-list li:hover {
             background-color: #e0e0e0;
         }
+
+        #listingTable {
+            width: auto;
+            height: 500px;
+            background-color: #20adab;
+        }
     </style>
 </head>
 <!-- <script src="../script/axios.min.js" type="text/javascript"></script> -->
 
 <body>
     <div id="root">
-
         <div id="sidebar">
             <h2 id="sideMenu">Menu</h2>
             <ul class="custom-list">
@@ -127,19 +132,16 @@
             <h2 id="DataDisplay">Data Display</h2>
             <h4>Online Client:</h4>&nbsp;<span id="OnlineClient"></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <h4>Max Client:</h4>&nbsp;<span id="MaxClient"></span>
-
+            <!-- different content  -->
             <div id="dataArea"></div>
-
             <div id="MQTTArea"></div>
-
             <div id="ClientArea"></div>
-
-
-            <diV id="MQTTclient" style="display: block;">
-                <div id="clientID" style="width: 350px; display: flex; font-size: 12px;"><span
-                        style="margin-left: 50px;">Pin Values</span>
-                    <span style="display: block; text-align: center; margin-left: 48px; font-size: 10px;"
-                        id="clientName" class="clientID">Arduino</span>
+            <!-- different content  -->
+            <diV id="MQTTclient" style="display: none;">
+                <div id="clientID" style="width: 350px; display: flex; font-size: 12px; height:25px;"><span
+                        style="margin-left: 30px;">Pin Values</span>
+                    <span style="display: block; text-align: center; margin-left: 40px; font-size: 10px;"
+                        id="clientName" class="clientID" style=" font-size: 15px;">Arduino</span>
                     <span style="display: block; text-align: center; margin-left: 45px;">Pin Values</span>
                 </div>
                 <div id="IOmuls">
@@ -185,7 +187,6 @@
                             <div id="D14value"></div>
                         </div>
                     </div>
-
                     <div id="right" style="display: none;">
                         <div id="D4" style="display: none;">D4</div>
                         <div id="D5" style="display: none;">D5</div>
@@ -208,42 +209,138 @@
 <script src="../script/mqtt.min.js"></script>
 <script src="/socket.io/socket.io.js"></script>
 <script>
-
     let clientdatall = [];
     let showpin = false;
-    // const socket = io('http://localhost:3000');
+    //pagination////////////////////////////////////////////////////////
+    let currentpage = 1;
+    let recordperpage = 3;
+    ////////////////////////////////////////////////////////////////////
 
-    //Get Devices from server
+    // const socket = io('http://localhost:3000');
+    //Get Devices from server1
     async function GetDevices() {
+        currentpage = 1;
+        recordperpage = 3;
         event.preventDefault();
         InitDiv();
         document.getElementById('dataArea').style.display = 'block';
         let url = 'http://localhost:3000/clientdata';
         let clientdata = await FetchData(url);
+        //create table content
+        const root = document.getElementById('dataArea');
+        const tablelist = document.createElement('div');
+        tablelist.id = 'tablelist';
+        tablelist.style.height = '620px';
+        tablelist.style.width = 'auto';
+        tablelist.style.overflow = 'auto';
+        root.appendChild(tablelist);
+        //create buttons
+        const prevLink = document.createElement('a');
+        prevLink.href = '#';
+        prevLink.onclick = function () {
+            tablelist.innerHTML = '';
+            if (currentpage > 1) {
+                currentpage--;
+                changePage(currentpage, recordperpage, clientdata);
+            }
+
+        }
+        prevLink.id = 'btn_prev';
+        prevLink.textContent = 'Prev';
+
+        const nextLink = document.createElement('a');
+        nextLink.href = '#';
+        nextLink.onclick = function () {
+            tablelist.innerHTML = '';
+            if (currentpage < numPages(clientdata.length, recordperpage)) {
+                currentpage++;
+                changePage(currentpage, recordperpage, clientdata);
+            }
+        }
+        nextLink.id = 'btn_next';
+        nextLink.textContent = 'Next';
+
+        const prefixSpan = document.createElement('span');
+        prefixSpan.textContent = 'Page: ';
+
+        const pageSpan = document.createElement('span');
+        pageSpan.id = 'page';
+
+        root.appendChild(prefixSpan);
+        root.appendChild(pageSpan);
+        root.appendChild(prevLink);
+        root.appendChild(nextLink);
+        ///////////////////////////////////////////////////////////////////////
+
         if (clientdata != null) {
             TableCreate(clientdata);
         }
         GetclientNumber();
         showpin = false;
-
-
     }
 
     function MQTTclientOnWeb() {
+
         event.preventDefault();
         InitDiv();
         document.getElementById('dataArea').style.display = 'none';
         document.getElementById('MQTTArea').style.display = 'block';
         showpin = false;
-
     }
 
     async function GetTopics() {
+        currentpage = 1;
+        recordperpage = 7;
         event.preventDefault();
         InitDiv();
         document.getElementById('dataArea').style.display = 'block';
         let url = 'http://localhost:3000/topics';
         let clientdata = await FetchData(url);
+        ///////////////////////////////////////////////////////////////////////
+        const root = document.getElementById('dataArea');
+        const tablelist = document.createElement('div');
+        tablelist.id = 'tablelist';
+        tablelist.style.height = '620px';
+        tablelist.style.width = 'auto';
+        tablelist.style.overflow = 'auto';
+        root.appendChild(tablelist);
+        //create buttons
+        const prevLink = document.createElement('a');
+        prevLink.href = '#';
+        prevLink.onclick = function () {
+            tablelist.innerHTML = '';
+            if (currentpage > 1) {
+                currentpage--;
+                changePage(currentpage, recordperpage, clientdata);
+            }
+
+        }
+        prevLink.id = 'btn_prev';
+        prevLink.textContent = 'Prev';
+
+        const nextLink = document.createElement('a');
+        nextLink.href = '#';
+        nextLink.onclick = function () {
+            tablelist.innerHTML = '';
+            if (currentpage < numPages(clientdata.length, recordperpage)) {
+                currentpage++;
+                changePage(currentpage, recordperpage, clientdata);
+            }
+        }
+        nextLink.id = 'btn_next';
+        nextLink.textContent = 'Next';
+
+        const prefixSpan = document.createElement('span');
+        prefixSpan.textContent = 'Page: ';
+
+        const pageSpan = document.createElement('span');
+        pageSpan.id = 'page';
+
+        root.appendChild(prefixSpan);
+        root.appendChild(pageSpan);
+        root.appendChild(prevLink);
+        root.appendChild(nextLink);
+
         if (clientdata != null) {
             TableCreate(clientdata);
         }
@@ -254,14 +351,12 @@
         let urlOnline = 'http://localhost:3000/OnlineClient';
         let onlinenum = await FetchData(urlOnline);
         document.getElementById('OnlineClient').innerHTML = onlinenum;
-
         let urlMax = 'http://localhost:3000/MaxClient';
         let maxnum = await FetchData(urlMax);
         document.getElementById('MaxClient').innerHTML = maxnum;
     }
 
     window.addEventListener('load', GetclientNumber());
-
 
     function GetClients() {
         event.preventDefault();
@@ -274,16 +369,19 @@
     }
 
     function TableCreate(data) {
-
-        const root = document.getElementById('dataArea');
+        const root = document.getElementById('tablelist');
+        changePage(currentpage, recordperpage, data);
+    }
+    //pagination//////////////////////////////////////////////////////////////
+    function changePage(currentpage, recordperpage, data) {
+        const tablelist = document.getElementById('tablelist');
         //create table
         const table = document.createElement('table');
         //create table head
         const thead = document.createElement('thead');
         //create table header
         const headerRow = document.createElement('tr');
-
-        //create table header
+        //create table headerrow
         const keys = Object.keys(data[0]);
         keys.forEach(key => {
             const th = document.createElement('th');
@@ -295,7 +393,28 @@
         table.appendChild(thead);
         //create table body
         const tbody = document.createElement('tbody');
-        data.forEach(row => {
+
+        if (currentpage < 1) currentpage == 1;
+        if (currentpage > numPages(data.length, recordperpage)) currentpage == numPages(data.length, recordperpage);
+
+        if (currentpage == 1) {
+            document.getElementById('btn_prev').style.visibility = "hidden";
+            document.getElementById('btn_next').style.visibility = "visible";
+        } else {
+            document.getElementById('btn_next').style.visibility = "visible";
+            document.getElementById('btn_prev').style.visibility = "visible";
+        }
+
+        if (currentpage == numPages(data.length, recordperpage)) {
+            document.getElementById('btn_prev').style.visibility = "visible";
+            document.getElementById('btn_next').style.visibility = "hidden";
+        } else {
+            document.getElementById('btn_next').style.visibility = "visible";
+        }
+
+
+        for (let i = (currentpage - 1) * recordperpage; i < (currentpage * recordperpage) && i < data.length; i++) {
+            let row = data[i];
             const tr = document.createElement('tr');
             keys.forEach((key, index) => {
                 const td = document.createElement('td');
@@ -315,11 +434,19 @@
                 tr.appendChild(td);
             });
             tbody.appendChild(tr);
-        });
+        }
+        const page = document.getElementById('page');
+        page.innerHTML = currentpage + "/" + numPages(data.length, recordperpage);
         table.appendChild(tbody);
-        root.appendChild(table);
+        table.style.tableLayout = 'fixed';
+        tablelist.appendChild(table);
     }
 
+    function numPages(dataLength, recordperpage) {
+        return Math.ceil(dataLength / recordperpage);
+    }
+
+    ////////////////////////////////////////////////////////////////////////////
     function InitDiv() {
         const root = document.getElementById('dataArea');
         root.innerHTML = '';
@@ -355,6 +482,8 @@
         //console.log(clientstate);
 
         const root = document.getElementById('MQTTArea');
+        const clientarea = document.getElementById("ClientArea");
+        clientarea.style.display = 'none';
         root.innerHTML = '<iframe src="../public/mqtt.html" id="mqttclienthtml" style="width: 100%; height: 100%; border: none;"></iframe>';
         root.style.display = 'none';
         let clientdata = '[]';
@@ -370,19 +499,16 @@
         });
 
         let clientjson = JSON.parse(clientdata);
-
         client.on('message', async (topic, message) => {
             let jsondata = JSON.parse(message);
-
             if (clientjson.length == 0) {
                 clientjson.push(jsondata);
             } else {
-                let newclientjson;
-                newclientjson = clientjson.filter((obj) => obj.clientID === jsondata.clientID);
-                if (newclientjson.length == 0) {
+                let newclientsjon;
+                newclientsjon = clientjson.filter((obj) => obj.clientID === jsondata.clientID);
+                if (newclientsjon.length == 0) {
                     clientjson.push(jsondata);
                 } else {
-
                     let urlstate = 'http://localhost:3000/clientdata';
                     let clientstate = await FetchData(urlstate);
                     clientstate.forEach(item => {
@@ -404,14 +530,6 @@
                         return obj;
                     });
 
-                    // clientjson = clientjson.map((obj) => {
-                    //     if (obj.clientID === jsondata.clientID) {
-                    //         for (pins in obj.digitalPins) {
-                    //             obj.digitalPins[pins] = jsondata.digitalPins[pins];
-                    //         }
-                    //     }
-                    //     return obj;
-                    // });
 
                 }
             }
@@ -429,23 +547,28 @@
 
         });
 
-        if (showpin) {
-            const socket = io('http://localhost:3000');
-            // Handle incoming client data updates
-            socket.on('updateClientData', (clientData) => {
-                clientdatajson = JSON.parse(clientData);
-                clientdatajson.forEach(item => {
-                    if (item.State === 'False') {
-                        clientjson = clientjson.filter(obj => obj.clientID !== item.ID);
-                    }
-                });
 
 
-                if (clientjson.length === 0) {
-                    document.getElementById('ClientArea').innerHTML = '';
+        const socket = io('http://localhost:3000');
+
+        // Handle incoming client data updates
+        socket.on('updateClientData', (clientData) => {
+            // Assuming clientData is an array of client objects
+            clientdatajson = JSON.parse(clientData);
+            //console.log(clientdatajson);
+            clientdatajson.forEach(item => {
+                if (item.State === 'False') {
+                    clientjson = clientjson.filter(obj => obj.clientID !== item.ID && item.ID != "PinsClient");
                 }
             });
-        }
+
+
+            if (clientjson.length === 0) {
+                document.getElementById('ClientArea').innerHTML = '';
+            }
+        });
+
+
 
         // if (showpin) {
         //     setInterval(async () => {
@@ -488,8 +611,6 @@
         document.getElementById('middle').style.width = '270px';
         document.getElementById('middle').style.height = '250px';
         document.getElementById('middle').style.justifyContent = 'space-between';
-
-
         document.getElementById('IOmuls').style.display = 'flex';
         document.getElementById('IOmuls').style.justifyContent = 'center';
         document.getElementById('left').style.width = '40px';
@@ -498,8 +619,6 @@
 
         let pins1values = document.getElementById('leftvalues').getElementsByTagName('div');
         let pins2values = document.getElementById('rightvalues').getElementsByTagName('div');
-
-
         let pins1 = document.getElementById('left').getElementsByTagName('div');
         let pins2 = document.getElementById('right').getElementsByTagName('div');
         for (let i = 0; i < pins1.length; i++) {
@@ -526,7 +645,6 @@
             pins1values[i].style.borderRadius = '5px';
             pins1values[i].style.cursor = 'pointer';
             pins1values[i].style.fontSize = '10px';
-
 
         }
 
@@ -558,14 +676,12 @@
         let digitalPins, digitalPinsValues, root, mattweb, mqttClientTemplate, newMQTTClient, clientarea;
 
         for (let i = 0; i < clientdatall.length; i++) {
-
             root = document.getElementById('dataArea');
             root.style.display = 'none';
             mattweb = document.getElementById('MQTTArea');
             mattweb.style.display = 'none';
             clientarea = document.getElementById('ClientArea');
             clientarea.style.display = 'block';
-
             mqttClientTemplate = document.getElementById('MQTTclient');
             newMQTTClient = mqttClientTemplate.cloneNode(true);
             //
@@ -573,10 +689,17 @@
             digitalPins = clientdatall[i].digitalPins;
             digitalPinsValues = Object.values(digitalPins).map(pin => pin.value);
 
+            if (clientdatall[i].AnalogPins) {
+                AnalogPins = clientdatall[i].AnalogPins;
+                AnalogPinsValues = Object.values(AnalogPins).map(pin => pin.value)
+                for (let k = 0; k < AnalogPinsValues.length - 1; k++) {
+                    newMQTTClient.querySelector('#A' + k + 'value').textContent = AnalogPinsValues[k];
+                }
+            }
             for (let j = 0; j < digitalPinsValues.length; j++) {
                 newMQTTClient.querySelector('#D' + j + 'value').textContent = digitalPinsValues[j];
             }
-
+            newMQTTClient.querySelector('#clientName').style.fontSize = '15px'
             newMQTTClient.style.display = 'block';
             newMQTTClient.style.margin = '10px';
             clientarea.style.display = 'flex';
@@ -585,9 +708,7 @@
             clientarea.appendChild(newMQTTClient);
             displayArduinoModel();
         }
-
         clientdatall = [];
-
     }
 
 
@@ -597,7 +718,6 @@
         return;
         showpin = false;
     }
-
 
 </script>
 

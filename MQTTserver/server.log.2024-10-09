@@ -1,0 +1,37 @@
+2024-10-09 12:16:46 info: WebSocket server started on port 8080
+2024-10-09 12:16:46 info: server running and listening on port 1883
+2024-10-09 12:16:48 info: Client Connected: PinsClient
+2024-10-09 12:25:30 info: WebSocket server started on port 8080
+2024-10-09 12:25:30 info: server running and listening on port 1883
+2024-10-09 12:25:33 info: Client Connected: PinsClient
+2024-10-09 12:27:25 info: WebSocket server started on port 8080
+2024-10-09 12:27:25 info: server running and listening on port 1883
+2024-10-09 12:27:28 info: Client Connected: PinsClient
+2024-10-09 12:27:28 info: Client PinsClient subscribed to topics: pins/#
+2024-10-09 12:27:28 info: Record insert clientdata with ID undefined
+2024-10-09 12:28:06 info: Client Disconnected: PinsClient
+2024-10-09 12:28:06 info: Client Connected: PinsClient
+2024-10-09 12:28:06 info: Client PinsClient unsubscribed to topics: pins/#
+2024-10-09 12:28:06 info: Client PinsClient subscribed to topics: pins/#
+2024-10-09 12:28:06 info: Record insert clientdata with ID undefined
+2024-10-09 12:28:08 info: Client Disconnected: PinsClient
+2024-10-09 12:28:08 info: Client Connected: PinsClient
+2024-10-09 12:28:08 info: Client PinsClient unsubscribed to topics: pins/#
+2024-10-09 12:28:08 info: Client PinsClient subscribed to topics: pins/#
+2024-10-09 12:28:08 info: Record insert clientdata with ID undefined
+2024-10-09 12:28:09 info: Client Connected: WebMQTTclient
+2024-10-09 12:28:09 info: Record insert clientdata with ID undefined
+2024-10-09 12:28:14 info: Client Disconnected: WebMQTTclient
+2024-10-09 12:28:15 info: Client Connected: WebMQTTclient
+2024-10-09 12:28:15 info: Record insert clientdata with ID undefined
+2024-10-09 12:29:11 info: Client Disconnected: WebMQTTclient
+2024-10-09 12:31:38 info: Client Disconnected: PinsClient
+2024-10-09 12:31:38 info: Client PinsClient unsubscribed to topics: pins/#
+2024-10-09 12:42:56 info: Client Connected: PinsClient
+2024-10-09 12:42:56 info: Client PinsClient subscribed to topics: pins/#
+2024-10-09 12:42:56 info: Record insert clientdata with ID undefined
+2024-10-09 12:42:59 info: Client Connected: WebMQTTclient
+2024-10-09 12:42:59 info: Record insert clientdata with ID undefined
+2024-10-09 12:43:44 info: Client Disconnected: WebMQTTclient
+2024-10-09 12:43:44 info: Client Disconnected: PinsClient
+2024-10-09 12:43:44 info: Client PinsClient unsubscribed to topics: pins/#

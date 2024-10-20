@@ -1,21 +1,31 @@
 const express = require("express");
-const http = require("http");
-const socketIo = require("socket.io");
-//import router
-//const router =require('./router');
 const app = express();
-const server = http.createServer(app);
-const io = socketIo(server);
 const fs = require("fs");
 const path = require("path");
+const http = require("http");
+const socketIo = require("socket.io");
+const server = http.createServer(app);
+const io = socketIo(server);
 //set router
-const port = 3000;
+
 const clientPath = "./clientdata/clientdata.json";
 const topicPath = "./clientdata/topics.json";
 const virtualPath = "./clientdata/virtual.json";
+//set router
+const port = 3000;
+const sqlite3 = require("sqlite3").verbose();
+let db = new sqlite3.Database("./database/MQTTDB");
 //app.use(router);
 app.use(express.json());
 app.use(express.static(path.join(__dirname)));
+
+
+// db.run("PRAGMA journal_mode = WAL;", (err) => {
+//   if (err) {
+//       return console.error(err.message);
+//   }
+//   console.log('WAL mode enabled.');
+// });
 
 app.get("/", async (req, res) => {
   res.sendFile(path.join(__dirname + "/public/index.html"));
@@ -23,38 +33,53 @@ app.get("/", async (req, res) => {
 
 //query data from clientdata.json
 app.get("/clientdata", async (req, res) => {
-  const data = await ReadData(clientPath);
-  if (!data || data.length === 0) {
-    res.json([]);
-  } else {
-    res.json(data);
-  }
+  db.all("SELECT * FROM clientdata ", [], (err, data) => {
+    if (err) {
+      console.log(err.message);
+      res.status(500).json({ error: "An error occured" });
+      //db.run("ROLLBACK");
+      return;
+    } else {
+      if (data.length === 0) {
+        res.json([]);
+      } else {
+        res.json(data);
+      }
+    }
+  });
 });
 
 //query data from topics.json
 app.get("/topics", async (req, res) => {
-  const data = await ReadData(topicPath);
-  if (!data || data.length === 0) {
-    res.json([]);
-  } else {
-    res.json(data);
-  }
+  db.all("SELECT * FROM topics", [], (err, data) => {
+    if (err) {
+      console.log(err.message);
+      res.status(500).json({ error: "An error occured" });
+      return;
+    } else {
+      if (data.length === 0) {
+        res.json([]);
+      } else {
+        res.json(data);
+      }
+    }
+  });
 });
 
 app.get("/OnlineClient", async (req, res) => {
-  let onlinenumber = 0;
-  const data = await ReadData(clientPath);
-
-  if (data != null) {
-    data.forEach((element) => {
-      if (element.state == "True") {
-        onlinenumber++;
+  db.all("SELECT * FROM clientdata WHERE State =?", ["True"], (err, data) => {
+    if (err) {
+      console.log(err.message);
+      res.status(500).json({ error: "An error occured!" });
+      return;
+    } else {
+      if (data.length === 0) {
+        res.json(0);
+      } else {
+        res.json(data.length);
       }
-    });
-    res.json(onlinenumber);
-  } else {
-    res.json(0);
-  }
+    }
+  });
 });
 
 app.get("/getpublish", async (req, res) => {
@@ -65,9 +90,6 @@ app.get("/getpublish", async (req, res) => {
 //post data to virtual.json
 app.post("/virtualpublish", async (req, res) => {
   const jsonDataTopic = req.body;
-  // let jsonData;
-  // jsonData = JSON.stringify(data, null, 2);
-  // writeData(virtualPath,jsonData);
   fs.readFile(virtualPath, (err, data) => {
     if (err) {
       console.log(err);
@@ -75,7 +97,6 @@ app.post("/virtualpublish", async (req, res) => {
     if (data.length == 0) {
       data = "[]";
     }
-
     let jsonData;
     jsonData = JSON.parse(data);
     if (jsonData.length == 0) {
@@ -91,55 +112,40 @@ app.post("/virtualpublish", async (req, res) => {
         writeData(virtualPath, JSON.stringify(jsonData, null, 2));
       }
     }
-    //     jsonData.push(jsonDataTopic);
-    //     jsonData = JSON.stringify(jsonData, null, 2);
-    //     writeData(virtualPath,jsonData);
   });
 });
 
 app.post("/clientstateupdate", async (req, res) => {
   let currentDate = new Date();
   const clientID = req.body.id;
-  fs.readFile(clientPath, (err, data) => {
-    if (err) {
-      console.log(err);
+  db.run(
+    "UPDATE clientdata SET State = ?,DisconnectTime =? WHERE ID = ? ",
+    ["False", currentDate.toLocaleString("en-US"), clientID],
+    (err) => {
+      if (err) {
+        console.error(err.message);
+        return;
+      } else {
+        console.log(`Record DisconnectTime inserted with ID ${cclientID}`);
+      }
     }
-    if (data.length == 0) {
-      data = "[]";
-    }
-    if (data != null) {
-      let jsonData;
-      jsonData = JSON.parse(data);
-      jsonData = jsonData.map((item) => {
-        if (item.id === clientID) {
-          return {
-            ...item,
-            ...{
-              state: "False",
-              disconnectTime: currentDate.toLocaleString("en-US"),
-            },
-          };
-        }
-        return item;
-      });
-      jsonData = JSON.stringify(jsonData, null, 2);
-      writeData(clientPath, jsonData);
-    }
-  });
+  );
 });
 
 app.get("/MaxClient", async (req, res) => {
-  let maxnumber = 0;
-
-  const data = await ReadData(clientPath);
-  if (data != null) {
-    data.forEach((element) => {
-      maxnumber++;
-    });
-    res.json(maxnumber);
-  } else {
-    res.json(0);
-  }
+  db.all("SELECT * FROM clientdata ", [], (err, data) => {
+    if (err) {
+      console.log(err.message);
+      res.status(500).json({ error: "An error occured!" });
+      return;
+    } else {
+      if (data.length === 0) {
+        res.json(0);
+      } else {
+        res.json(data.length);
+      }
+    }
+  });
 });
 
 async function writeData(Path, data) {
@@ -150,7 +156,6 @@ async function writeData(Path, data) {
   } catch (error) {
     console.error('Error writing devices to file', error);
   }
-  // write file
 }
 
 function ReadData(Path) {
@@ -172,30 +177,19 @@ function ReadData(Path) {
     });
   });
 }
+//poling query for the last exist device
+setInterval(() => {
+  db.all("SELECT * FROM clientdata", [], (err, data) => {
+    if (err) {
+      console.log(err.message);
+    }
+    let jsondata = JSON.stringify(data, null, 2);
+    io.emit('updateClientData', jsondata);
+  });
+}, 1000);
+
 
 //receive message from MQTT server
-io.on("connection", (socket) => {
-  console.log("MQTT server connected.");
-  socket.on("client Data", (data) => {
-    if (data == null) {
-      return;
-    }
-    writeData(clientPath, data);
-    io.emit("updateClientData", data);
-  });
-
-  socket.on("client topics", (data) => {
-    if (data == null) {
-      return;
-    }
-    writeData(topicPath, data);
-  });
-  socket.on("disconnect", () => {
-    console.log("MQTT server disconnected.");
-    socket.disconnect();
-  });
-});
-
-server.listen(port, () => {
+server.listen(port, '0.0.0.0', () => {
   console.log(`Server is running on port 3000 ${port}`);
 });

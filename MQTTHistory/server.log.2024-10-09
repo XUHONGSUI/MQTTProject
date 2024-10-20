@@ -1,0 +1,13 @@
+2024-10-09 12:17:22 info: WebSocket server started on port 8080
+2024-10-09 12:17:22 info: server running and listening on port 1883
+2024-10-09 12:17:23 info: Client Connected: PinsClient
+2024-10-09 12:17:23 info: Client PinsClient subscribed to topics: pins/#
+2024-10-09 12:17:28 info: Client Connected: WebMQTTclient
+2024-10-09 12:17:32 info: Client Disconnected: WebMQTTclient
+2024-10-09 12:17:42 info: Client Disconnected: PinsClient
+2024-10-09 12:17:42 info: Client Connected: PinsClient
+2024-10-09 12:17:42 info: Client PinsClient unsubscribed to topics: pins/#
+2024-10-09 12:17:42 info: Client PinsClient subscribed to topics: pins/#
+2024-10-09 12:17:44 info: Client Disconnected: PinsClient
+2024-10-09 12:17:44 info: Client Connected: PinsClient
+2024-10-09 12:17:44 info: Client PinsClient unsubscribed to topics: pins/#

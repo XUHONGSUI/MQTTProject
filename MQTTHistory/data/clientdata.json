@@ -1,0 +1,15 @@
+[
+  {
+    "id": "PinsClient",
+    "state": "True",
+    "time": "10/9/2024, 12:17:22 PM"
+  },
+  {
+    "id": "WebMQTTclient",
+    "state": "False",
+    "time": "10/9/2024, 12:17:22 PM",
+    "disconnectTime": "10/9/2024, 12:17:22 PM"
+  }
+] "disconnectTime": "10/9/2024, 12:17:22 PM"
+  }
+]

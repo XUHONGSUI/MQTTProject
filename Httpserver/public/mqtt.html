@@ -30,7 +30,7 @@
                 <span class="background">Settings</span>
                 <span>Publish</span>
                 <span>Subscribe</span>
-                <span>IOs</span>
+                <!-- <span>IOs</span> -->
             </div>
             <div class="mqttclientbody" id="mqttbody">
                 <div id="clientsettings" style="display: block;">
@@ -57,7 +57,7 @@
 
                 </div>
                 
-                <div id="IOs">
+                <!-- <div id="IOs">
                     <div id="left" style="display: none;">
                         <div id="A0" style="display: none;">A0</div>
                         <div id="A1" style="display: none;">A1</div>
@@ -87,7 +87,7 @@
                         <div id="D13" style="display: none;">D13</div>
                         <div id="D14" style="display: none;">D14</div>
                     </div>
-                </div>
+                </div> -->
 
                 
 
@@ -321,13 +321,13 @@
             ConnetionTimeout: ConnetionTimeout
         });
         postData(urlpublish, data);
-
+        //
         let urlPublish = 'http://localhost:3000/getpublish';
         let publishtopics = setTimeout(()=>{
             FetchData(urlPublish);
         },200);
         document.getElementById('mySelect').innerHTML = "";
-
+        //
         publishtopics.then((data) => {
             if (data != null) {
                 let jsonData = JSON.parse(JSON.stringify(data));
