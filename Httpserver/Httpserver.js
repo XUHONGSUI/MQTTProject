@@ -27,6 +27,13 @@ app.use(express.static(path.join(__dirname)));
 //   console.log('WAL mode enabled.');
 // });
 
+
+// app.get Handle GET requests from clients
+// GET:Often used to request pages or data without changing server status
+
+//app.post Handle POST requests from clients
+//Used to process POST requests for sending data, often used to submit forms or send data to the server, and may modify the server status
+
 app.get("/", async (req, res) => {
   res.sendFile(path.join(__dirname + "/public/index.html"));
 });

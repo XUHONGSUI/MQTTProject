@@ -313,7 +313,6 @@
                 currentpage--;
                 changePage(currentpage, recordperpage, clientdata);
             }
-
         }
         prevLink.id = 'btn_prev';
         prevLink.textContent = 'Prev';
@@ -480,7 +479,6 @@
 
     window.onload = async function () {
         //console.log(clientstate);
-
         const root = document.getElementById('MQTTArea');
         const clientarea = document.getElementById("ClientArea");
         clientarea.style.display = 'none';
@@ -699,13 +697,14 @@
             for (let j = 0; j < digitalPinsValues.length; j++) {
                 newMQTTClient.querySelector('#D' + j + 'value').textContent = digitalPinsValues[j];
             }
+            clientarea.appendChild(newMQTTClient);
             newMQTTClient.querySelector('#clientName').style.fontSize = '15px'
             newMQTTClient.style.display = 'block';
             newMQTTClient.style.margin = '10px';
             clientarea.style.display = 'flex';
             clientarea.style.flexWrap = 'wrap';
             clientarea.style.overflow = 'scroll';
-            clientarea.appendChild(newMQTTClient);
+         
             displayArduinoModel();
         }
         clientdatall = [];
