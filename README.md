@@ -1,2 +1,2 @@
-![ac8667623f4dc90251cfbf42afcece3](https://github.com/user-attachments/assets/1c8d2bbf-bde5-446d-99b7-a3a87dd302fb)
+![image](https://github.com/user-attachments/assets/ebce1f68-6ddd-43e8-8669-bd02e47070c9)
 A brief software process architecture
